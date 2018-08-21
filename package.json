@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "@babel/preset-react": "^7.0.0-rc.1",
+    "@blueprintjs/core": "^3.3.0",
+    "babel-loader": "^8.0.0-beta",
+    "babel-preset-env": "^1.7.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "web-ext": "^2.8.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "web-ext run"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "firefox": 61
+          }
+        }
+      ]
+    ]
+  }
+}

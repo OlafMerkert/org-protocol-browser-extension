@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "Org Protocol Browser Extension",
+  "version": "1.0",
+  "icons": {
+    "48": "icons/org-mode-unicorn-logo.png"
+  },
+
+  "permissions": ["activeTab", "tabs"],
+
+  "browser_action": {
+    "default_icon": "icons/org-mode-unicorn-logo.png",
+    "default_title": "Org Protocol",
+    "default_popup": "protocol-actions.html"
+  }
+}
