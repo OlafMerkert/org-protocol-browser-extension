@@ -16,9 +16,3 @@ export const getSelectionFromTab = async tab => {
   });
   return join("", selection);
 };
-
-export const invokeWithUrlAndTitle = protocolHandler => async () => {
-  const activeTab = await getActiveTab();
-  const urlAndTitle = getUrlAndTitleFromTab(activeTab);
-  await protocolHandler(urlAndTitle);
-};
