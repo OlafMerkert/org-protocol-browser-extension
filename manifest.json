@@ -20,7 +20,7 @@
       "description": "Automatic Capture"
     },
     "store-link": {
-      "suggested_key": { "default": "Shift+F8" },
+      "suggested_key": { "default": "F9" },
       "description": "Store Link"
     },
     "open-in-emacs-browser": {

@@ -58,19 +58,19 @@ Additional actions should include:
 *** DONE larger component for frequent actions
 + large square button
 *** DONE polish styles
-** IN-PROGRESS Keyboard shortcuts
+** DONE Keyboard shortcuts
 As a power user, I would like to invoke org-capture and other org tasks with a custom keyboard shortcut.
 
 | command           | key    |
 |-------------------+--------|
 | automatic capture | <f8>   |
-| store link        | S-<f8> |
+| store link        | <f9>   |
 | open in eww       | <f2>   |
 
 *** DONE add commands with keybinding to manifest
 *** DONE adjust build to create background script
-*** TODO handle commands in background script
-** end user documentation
+*** DONE handle commands in background script
+** REFINE end user documentation
 + readme
 + package metadata
 + manifest metadata
