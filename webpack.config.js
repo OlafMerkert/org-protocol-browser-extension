@@ -1,3 +1,5 @@
+const Visualizer = require("webpack-visualizer-plugin");
+
 module.exports = {
   module: {
     rules: [
@@ -6,4 +8,5 @@ module.exports = {
     ],
   },
   devtool: "source-map",
+  plugins: [new Visualizer({ filename: "./bundle-size-report.html" })],
 };
