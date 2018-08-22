@@ -1,0 +1,19 @@
+#+TODO: REFINE TODO IN-PROGRESS DONE
+
+* Stories
+** IN-PROGRESS working general capture
+As a user, I want to invoke org-capture by clicking a button.
+** REFINE buttons in toolbar
+As a user, I would like to access the org-capture functionality from a toolbar.
+** automatic detection of capture type
+As a user, I would like pull requests and JIRA tasks automatically trigger the correct capture target
+** other actions beside capture
+As a user, I want to
++ store links
++ copy the current selection
++ send a e-mail with a link of the current page
++ open a page in the emacs browser
+** organised menu with org tasks
+As a user, I only need the most frequently used actions accessible with one click. Less frequently used actions should be collected in a menu.
+** Keyboard shortcuts
+As a power user, I would like to invoke org-capture and other org tasks with a custom keyboard shortcut.
