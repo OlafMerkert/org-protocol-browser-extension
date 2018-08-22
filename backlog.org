@@ -1,21 +1,24 @@
 #+TODO: REFINE TODO IN-PROGRESS DONE
 
 * Stories
-** IN-PROGRESS working general capture                                    :mvp:
+** DONE working general capture                                           :mvp:
 As a user, I want to invoke org-capture by clicking a button.
 *** DONE build and invoke org-protocol url
 *** DONE get title and url from active browser tab
 *** DONE get current selection
-** REFINE buttons in toolbar
+** TODO buttons in toolbar
 As a user, I would like to access the org-capture functionality from a toolbar.
-** automatic detection of capture type
-As a user, I would like pull requests and JIRA tasks automatically trigger the correct capture target
+*** TODO research toolbar api
+*** TODO add custom toolbar with dummy button
+*** TODO wire button to capture function
 ** other actions beside capture
 As a user, I want to
 + store links
 + copy the current selection
 + send a e-mail with a link of the current page
 + open a page in the emacs browser
+** automatic detection of capture type
+As a user, I would like pull requests and JIRA tasks automatically trigger the correct capture target
 ** organised menu with org tasks
 As a user, I only need the most frequently used actions accessible with one click. Less frequently used actions should be collected in a menu.
 ** Keyboard shortcuts
@@ -24,3 +27,4 @@ As a power user, I would like to invoke org-capture and other org tasks with a c
 + readme
 + package metadata
 + manifest metadata
+** automatically change focus to emacs
