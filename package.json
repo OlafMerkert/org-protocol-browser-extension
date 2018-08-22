@@ -21,6 +21,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
+    "build:dev": "webpack --mode development --watch",
     "start": "web-ext run",
     "test": "jest",
     "format": "prettier --write **/*.js **/*.json"
