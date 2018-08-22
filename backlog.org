@@ -12,7 +12,7 @@ As a user, I want to
 *** DONE store links
 *** DONE copy the current selection
 *** DONE send a e-mail with a link of the current page
-*** TODO open a page in the emacs browser
+*** DONE open a page in the emacs browser
 ** REFINE automatic detection of capture type
 As a user, I would like pull requests and JIRA tasks automatically trigger the correct capture target
 ** REFINE organised menu with org tasks

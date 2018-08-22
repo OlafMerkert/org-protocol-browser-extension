@@ -1,7 +1,12 @@
 import React from "react";
 import { render } from "react-dom";
-import { getActiveTab, getSelectionFromTab, getUrlAndTitleFromTab } from "./activeTabData";
-import { capture, storeLink, copySelection, sendMail } from "./org";
+import {
+  getActiveTab,
+  getSelectionFromTab,
+  getUrlAndTitleFromTab,
+  invokeWithUrlAndTitle,
+} from "./activeTabData";
+import { capture, storeLink, copySelection, sendMail, openInEmacsBrowser } from "./org";
 
 const handleCapture = async () => {
   const activeTab = await getActiveTab();
@@ -10,22 +15,14 @@ const handleCapture = async () => {
   await capture({ ...urlAndTitle, body: selection });
 };
 
-const handleStoreLink = async () => {
-  const activeTab = await getActiveTab();
-  const urlAndTitle = getUrlAndTitleFromTab(activeTab);
-  await storeLink(urlAndTitle);
-};
+const handleStoreLink = invokeWithUrlAndTitle(storeLink);
+const handleSendMail = invokeWithUrlAndTitle(sendMail);
+const handleOpenInEmacsBrowser = invokeWithUrlAndTitle(openInEmacsBrowser);
 
 const handleCopySelection = async () => {
   const activeTab = await getActiveTab();
   const selection = await getSelectionFromTab(activeTab);
   await copySelection({ selection });
-};
-
-const handleSendMail = async () => {
-  const activeTab = await getActiveTab();
-  const urlAndTitle = getUrlAndTitleFromTab(activeTab);
-  await sendMail(urlAndTitle);
 };
 
 const App = props => (
@@ -41,6 +38,9 @@ const App = props => (
     </div>
     <div>
       <button onClick={handleSendMail}>Send Mail</button>
+    </div>
+    <div>
+      <button onClick={handleOpenInEmacsBrowser}>Open in eww</button>
     </div>
   </div>
 );

@@ -23,6 +23,6 @@ const openOrgProtocolUrl = name =>
 
 export const capture = openOrgProtocolUrl("capture");
 export const storeLink = openOrgProtocolUrl("store-link");
-export const emacsBrowser = openOrgProtocolUrl("w3m");
+export const openInEmacsBrowser = openOrgProtocolUrl("w3m");
 export const copySelection = openOrgProtocolUrl("cpsel");
 export const sendMail = openOrgProtocolUrl("email");
