@@ -76,14 +76,18 @@ As a power user, I would like to invoke org-capture and other org tasks with a c
 *** DONE manifest metadata
 *** DONE license
 *** DONE readme
-** IN-PROGRESS package the web-extension
+** DONE package the web-extension
 As a user, I would like to install the extension like any other addon.
 
 *** DONE use target as output directory
 *** DONE generate html file for popup automatically, or move to dist?
-*** TODO use web-ext build for packaging
+*** DONE use web-ext build for packaging
 ensure that only needed files are included in the artifact.
-** REFINE cross-browser compatibility
+** sign the web-extension
+Requires an account at Mozilla.
+Signing can be done using web-ext, too.
+
+** cross-browser compatibility
 As a user, I would like to use the extension in the following browsers:
 + Firefox
 + Chrome
