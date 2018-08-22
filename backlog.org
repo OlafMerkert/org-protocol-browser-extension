@@ -5,7 +5,7 @@
 As a user, I want to invoke org-capture by clicking a button.
 *** DONE build and invoke org-protocol url
 *** DONE get title and url from active browser tab
-*** TODO get current selection
+*** DONE get current selection
 ** REFINE buttons in toolbar
 As a user, I would like to access the org-capture functionality from a toolbar.
 ** automatic detection of capture type

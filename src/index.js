@@ -1,11 +1,13 @@
 import React from "react";
 import { render } from "react-dom";
+import { getActiveTab, getSelectionFromTab, getUrlAndTitleFromTab } from "./activeTabData";
 import { capture } from "./org";
-import { getActiveTab, getUrlAndTitleFromTab } from "./activeTabData";
 
 const handleCapture = async () => {
   const activeTab = await getActiveTab();
-  await capture(getUrlAndTitleFromTab(activeTab));
+  const urlAndTitle = getUrlAndTitleFromTab(activeTab);
+  const selection = await getSelectionFromTab(activeTab);
+  await capture({ ...urlAndTitle, body: selection });
 };
 
 const App = props => (

@@ -1,4 +1,4 @@
-import { pick } from "ramda";
+import { join, pick } from "ramda";
 
 export const getActiveTab = async () => {
   const tabs = await browser.tabs.query({
@@ -9,3 +9,10 @@ export const getActiveTab = async () => {
 };
 
 export const getUrlAndTitleFromTab = pick(["url", "title"]);
+
+export const getSelectionFromTab = async tab => {
+  const selection = await browser.tabs.executeScript(tab.id, {
+    code: "getSelection().toString();",
+  });
+  return join("", selection);
+};
