@@ -10,7 +10,7 @@ As a user, I want to invoke org-capture by clicking a button.
 ** IN-PROGRESS other actions beside capture
 As a user, I want to
 *** DONE store links
-*** TODO copy the current selection
+*** DONE copy the current selection
 *** TODO send a e-mail with a link of the current page
 *** TODO open a page in the emacs browser
 ** automatic detection of capture type
