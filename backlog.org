@@ -76,7 +76,7 @@ As a power user, I would like to invoke org-capture and other org tasks with a c
 *** DONE manifest metadata
 *** DONE license
 *** TODO readme
-** cross-browser compatibility
+** REFINE cross-browser compatibility
 As a user, I would like to use the extension in the following browsers:
 + Firefox
 + Chrome
@@ -87,7 +87,7 @@ As a user, I would like to access the org-capture functionality from a toolbar.
 webextension api does not provide this currently. see https://bugzilla.mozilla.org/show_bug.cgi?id=1215064
 *** TODO add custom toolbar with dummy button
 *** TODO wire button to capture function
-** automatic capture for appointments from zimbra and outlook
+** automatic capture for appointments from Zimbra and Outlook
 As a user, I want to conveniently copy appointments from Zimbra to org.
 
 Should this even use browser capture?
