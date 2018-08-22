@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { getActiveTab, getSelectionFromTab, getUrlAndTitleFromTab } from "./activeTabData";
-import { capture, storeLink, copySelection } from "./org";
+import { capture, storeLink, copySelection, sendMail } from "./org";
 
 const handleCapture = async () => {
   const activeTab = await getActiveTab();
@@ -22,6 +22,12 @@ const handleCopySelection = async () => {
   await copySelection({ selection });
 };
 
+const handleSendMail = async () => {
+  const activeTab = await getActiveTab();
+  const urlAndTitle = getUrlAndTitleFromTab(activeTab);
+  await sendMail(urlAndTitle);
+};
+
 const App = props => (
   <div>
     <div>
@@ -32,6 +38,9 @@ const App = props => (
     </div>
     <div>
       <button onClick={handleCopySelection}>Copy Selection</button>
+    </div>
+    <div>
+      <button onClick={handleSendMail}>Send Mail</button>
     </div>
   </div>
 );
