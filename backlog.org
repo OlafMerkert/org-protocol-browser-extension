@@ -61,13 +61,13 @@ Additional actions should include:
 ** IN-PROGRESS Keyboard shortcuts
 As a power user, I would like to invoke org-capture and other org tasks with a custom keyboard shortcut.
 
-| command           | key  |
-|-------------------+------|
-| automatic capture | <f8> |
-| store link        | <f9> |
-| open in eww       | <f2> |
+| command           | key    |
+|-------------------+--------|
+| automatic capture | <f8>   |
+| store link        | S-<f8> |
+| open in eww       | <f2>   |
 
-*** TODO add commands with keybinding to manifest
+*** DONE add commands with keybinding to manifest
 *** TODO adjust build to create background script
 *** TODO handle commands in background script
 ** end user documentation

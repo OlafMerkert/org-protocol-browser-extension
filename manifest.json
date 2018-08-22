@@ -12,5 +12,20 @@
     "default_icon": "icons/org-mode-unicorn-logo.png",
     "default_title": "Org Protocol",
     "default_popup": "protocol-actions.html"
+  },
+
+  "commands": {
+    "automatic-capture": {
+      "suggested_key": { "default": "F8" },
+      "description": "Automatic Capture"
+    },
+    "store-link": {
+      "suggested_key": { "default": "Shift+F8" },
+      "description": "Store Link"
+    },
+    "open-in-emacs-browser": {
+      "suggested_key": { "default": "F2" },
+      "description": "Open in eww"
+    }
   }
 }
