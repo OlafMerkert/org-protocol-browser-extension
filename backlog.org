@@ -35,9 +35,10 @@ For now, there should be another button labelled "Automatic capture".
 
 + As fallback, we should use the normal capture option without predefined template key
 *** DONE add buttons for capturing JIRA and PR manually
-*** TODO detect pull request
+*** DONE detect pull request
 *** TODO detect JIRA issue
 *** TODO detect JIRA task on board
+*** TODO add button for automatic capture
 ** TODO organised menu with org tasks
 As a user, I only need the most frequently used actions accessible with one click. Less frequently used actions should be collected in a menu.
 
