@@ -1,17 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
 import { capture } from "./org";
+import { getActiveTab, getUrlAndTitleFromTab } from "./activeTabData";
 
 const handleCapture = async () => {
-  const tabs = await browser.tabs.query({
-    active: true,
-    windowId: browser.windows.WINDOW_ID_CURRENT,
-  });
-  const { url, title } = tabs[0];
-  await capture({
-    url,
-    title,
-  });
+  const activeTab = await getActiveTab();
+  await capture(getUrlAndTitleFromTab(activeTab));
 };
 
 const App = props => (
