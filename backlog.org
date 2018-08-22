@@ -7,14 +7,27 @@ As a user, I want to invoke org-capture by clicking a button.
 *** DONE build and invoke org-protocol url
 *** DONE get title and url from active browser tab
 *** DONE get current selection
-** IN-PROGRESS other actions beside capture
+** DONE other actions beside capture
 As a user, I want to
 *** DONE store links
 *** DONE copy the current selection
 *** DONE send a e-mail with a link of the current page
 *** DONE open a page in the emacs browser
 ** REFINE automatic detection of capture type
-As a user, I would like pull requests and JIRA tasks automatically trigger the correct capture target
+As a user, I would like pull requests and JIRA tasks automatically trigger the correct capture target. 
+
+For now, there should be another button labelled "Automatic capture".
+
++ TFS Pull request (template key R): [[http://someserver:8080/tfs/DefaultCollection/someProject/someTeam/_git/someRepo/pullrequest/2134#_a=overview]]
+
++ JIRA task on board:
+  [[https://jira.somewhere.com/secure/RapidBoard.jspa?rapidView=100&view=detail&selectedIssue=TM-3479]]
+  For a selected issue, the link should point to the issue page.
+  The title will not have relevant information.
+  
++ JIRA issue (template key J):
+  https://jira.somewhere.com/browse/TM-3479
+
 ** REFINE organised menu with org tasks
 As a user, I only need the most frequently used actions accessible with one click. Less frequently used actions should be collected in a menu.
 ** Keyboard shortcuts
