@@ -3,13 +3,15 @@ import { render } from "react-dom";
 import { capture } from "./org";
 
 const handleCapture = async () => {
-  const tabs = await browser.tabs
-        .query({ active: true, windowId: browser.windows.WINDOW_ID_CURRENT });
-      const { url, title } = tabs[0];
+  const tabs = await browser.tabs.query({
+    active: true,
+    windowId: browser.windows.WINDOW_ID_CURRENT,
+  });
+  const { url, title } = tabs[0];
   await capture({
-        url,
-        title,
-      });
+    url,
+    title,
+  });
 };
 
 const App = props => (

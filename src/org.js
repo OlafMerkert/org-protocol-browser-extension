@@ -2,10 +2,8 @@ import { join, map, pipe, toPairs } from "ramda";
 
 export const orgProtocolUrlBuilder = name => {
   const baseUrl = `org-protocol://${name}`;
-  const prependBaseUrl = parameters =>
-    parameters ? `${baseUrl}?${parameters}` : baseUrl;
-  const encodeParameter = ([name, value]) =>
-    `${name}=${encodeURIComponent(value)}`;
+  const prependBaseUrl = parameters => (parameters ? `${baseUrl}?${parameters}` : baseUrl);
+  const encodeParameter = ([name, value]) => `${name}=${encodeURIComponent(value)}`;
 
   return pipe(
     toPairs,
