@@ -76,11 +76,11 @@ As a power user, I would like to invoke org-capture and other org tasks with a c
 *** DONE manifest metadata
 *** DONE license
 *** DONE readme
-** REFINE package the web-extension
+** IN-PROGRESS package the web-extension
 As a user, I would like to install the extension like any other addon.
 
-*** TODO generate html file for popup automatically, or move to dist?
-*** TODO use target as output directory
+*** DONE use target as output directory
+*** DONE generate html file for popup automatically, or move to dist?
 *** TODO use web-ext build for packaging
 ensure that only needed files are included in the artifact.
 ** REFINE cross-browser compatibility

@@ -14,7 +14,7 @@
   "browser_action": {
     "default_icon": "icons/capture-org.png",
     "default_title": "Org Protocol",
-    "default_popup": "protocol-actions.html"
+    "default_popup": "capturePopup.html"
   },
 
   "commands": {
@@ -33,6 +33,6 @@
   },
 
   "background": {
-    "scripts": ["dist/captureKeys.js"]
+    "scripts": ["captureKeys.js"]
   }
 }
