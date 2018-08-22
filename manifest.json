@@ -2,8 +2,11 @@
   "manifest_version": 2,
   "name": "Org Protocol Browser Extension",
   "version": "1.0",
+  "description": "Trigger org-capture from the browser via org-protocol.",
+  "author": "Olaf Merkert",
+
   "icons": {
-    "48": "icons/org-mode-unicorn-logo.png"
+    "64": "icons/capture-org.png"
   },
 
   "permissions": ["activeTab", "tabs"],

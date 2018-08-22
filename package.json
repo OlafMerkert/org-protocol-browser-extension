@@ -1,4 +1,13 @@
 {
+  "name": "Org Protocol Browser Extension",
+  "version": "1.0",
+  "description": "Trigger org-capture from the browser via org-protocol.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OlafMerkert/org-protocol-browser-extension"
+  },
+  "author": "Olaf Merkert <olaf@m-merkert.de>",
   "dependencies": {
     "@babel/core": "^7.0.0-rc.1",
     "@babel/preset-env": "^7.0.0-rc.1",
