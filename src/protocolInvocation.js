@@ -5,6 +5,7 @@ const invokeWithUrlAndTitle = protocolHandler => async () => {
   const activeTab = await getActiveTab();
   const urlAndTitle = getUrlAndTitleFromTab(activeTab);
   await protocolHandler(urlAndTitle);
+  window.close();
 };
 
 export const handleCapture = async () => {
@@ -12,6 +13,7 @@ export const handleCapture = async () => {
   const urlAndTitle = getUrlAndTitleFromTab(activeTab);
   const selection = await getSelectionFromTab(activeTab);
   await capture({ ...urlAndTitle, body: selection });
+  window.close();
 };
 
 export const handleStoreLink = invokeWithUrlAndTitle(storeLink);
@@ -22,4 +24,5 @@ export const handleCopySelection = async () => {
   const activeTab = await getActiveTab();
   const selection = await getSelectionFromTab(activeTab);
   await copySelection({ selection });
+  window.close();
 };

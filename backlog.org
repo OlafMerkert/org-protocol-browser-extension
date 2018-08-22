@@ -13,8 +13,10 @@ As a user, I want to
 *** DONE copy the current selection
 *** DONE send a e-mail with a link of the current page
 *** DONE open a page in the emacs browser
-** TODO automatically change focus to emacs
+** IN-PROGRESS automatically change focus to emacs
 As a user, I do not want to have to manually switch focus to Emacs. Moreover, the action popup should close automatically.
+*** DONE close popup
+*** TODO research focus change request
 ** TODO automatic detection of capture type
 As a user, I would like pull requests and JIRA tasks automatically trigger the correct capture target. 
 
