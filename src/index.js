@@ -1,5 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
+import { ActionList } from "./components/ActionList";
+import { FrequentAction } from "./components/FrequentAction";
+import { RareAction } from "./components/RareAction";
 import {
   handleAutomaticCapture,
   handleCapture,
@@ -11,32 +14,16 @@ import {
 } from "./protocolInvocation";
 
 const App = props => (
-  <div>
-    <div>
-      <button onClick={handleCapture}>Capture</button>
-    </div>
-    <div>
-      <button onClick={handleAutomaticCapture}>Automatic Capture</button>
-    </div>
-    <div>
-      <button onClick={handleStoreLink}>Store Link</button>
-    </div>
-    <div>
-      <button onClick={handleCopySelection}>Copy Selection</button>
-    </div>
-    <div>
-      <button onClick={handleSendMail}>Send Mail</button>
-    </div>
-    <div>
-      <button onClick={handleOpenInEmacsBrowser}>Open in eww</button>
-    </div>
-    <div>
-      <button onClick={handleCaptureWithTemplate("J")}>Capture JIRA task</button>
-    </div>
-    <div>
-      <button onClick={handleCaptureWithTemplate("R")}>Capture Pull Request</button>
-    </div>
-  </div>
+  <ActionList>
+    <FrequentAction handler={handleAutomaticCapture} label="Automatic Capture" />
+    <FrequentAction handler={handleStoreLink} label="Store Link" />
+    <RareAction handler={handleCapture} label="Capture" />
+    <RareAction handler={handleCopySelection} label="Copy Selection" />
+    <RareAction handler={handleSendMail} label="Send Mail" />
+    <RareAction handler={handleOpenInEmacsBrowser} label="Open in eww" />
+    <RareAction handler={handleCaptureWithTemplate("R")} label="Capture Pull Request" />
+    <RareAction handler={handleCaptureWithTemplate("J")} label="Capture JIRA task" />
+  </ActionList>
 );
 
 render(<App />, document.getElementById("root-node"));
