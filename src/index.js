@@ -25,6 +25,12 @@ const App = props => (
     <div>
       <button onClick={handleOpenInEmacsBrowser}>Open in eww</button>
     </div>
+    <div>
+      <button onClick={handleCaptureWithTemplate("J")}>Capture JIRA task</button>
+    </div>
+    <div>
+      <button onClick={handleCaptureWithTemplate("R")}>Capture Pull Request</button>
+    </div>
   </div>
 );
 
