@@ -8,9 +8,10 @@ Install [[https://nodejs.org/en/][Node.js]] and the [[https://yarnpkg.com/lang/e
 #+BEGIN_SRC sh
 > yarn
 > yarn build
+> yarn package
 #+END_SRC
 ** Run it
-In development mode: go to ~about:debugging~ in Firefox and temporary load the extension by selecting the manifest.json file.
+In development mode: go to ~about:debugging~ in Firefox and temporary load the extension by selecting the zip file created in the target directory by the build.
 ** Features
 *** Available org-protocol targets
 | label                | org-protocol handler | parameters                   |
