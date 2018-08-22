@@ -34,6 +34,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development --watch",
+    "package": "web-ext build -s target/dist -a target --overwrite-dest",
     "start": "web-ext run",
     "test": "jest",
     "format": "prettier --write **/*.js **/*.json"
