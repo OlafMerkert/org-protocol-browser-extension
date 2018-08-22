@@ -39,7 +39,7 @@ For now, there should be another button labelled "Automatic capture".
 *** DONE detect JIRA issue
 *** DONE detect JIRA task on board
 *** DONE add button for automatic capture
-** IN-PROGRESS organised menu with org tasks
+** DONE organised menu with org tasks
 As a user, I only need the most frequently used actions accessible with one click. Less frequently used actions should be collected in a menu.
 
 Frequent actions are:
@@ -57,9 +57,16 @@ Additional actions should include:
 + smaller rectangular button
 *** DONE larger component for frequent actions
 + large square button
-*** IN-PROGRESS polish styles
-** REFINE Keyboard shortcuts
+*** DONE polish styles
+** TODO Keyboard shortcuts
 As a power user, I would like to invoke org-capture and other org tasks with a custom keyboard shortcut.
+
+| command           | key  |
+|-------------------+------|
+| automatic capture | <f8> |
+| store link        | <f9> |
+| open in eww       | <f2> |
+
 ** end user documentation
 + readme
 + package metadata
