@@ -1,4 +1,5 @@
-#+TODO: REFINE TODO IN-PROGRESS DONE
+#+TODO: REFINE TODO IN-PROGRESS | DONE
+#+TODO: BLOCKED | CANCELLED
 
 * Stories
 ** DONE working general capture                                           :mvp:
@@ -6,12 +7,7 @@ As a user, I want to invoke org-capture by clicking a button.
 *** DONE build and invoke org-protocol url
 *** DONE get title and url from active browser tab
 *** DONE get current selection
-** TODO buttons in toolbar
-As a user, I would like to access the org-capture functionality from a toolbar.
-*** TODO research toolbar api
-*** TODO add custom toolbar with dummy button
-*** TODO wire button to capture function
-** other actions beside capture
+** TODO other actions beside capture
 As a user, I want to
 + store links
 + copy the current selection
@@ -28,3 +24,9 @@ As a power user, I would like to invoke org-capture and other org tasks with a c
 + package metadata
 + manifest metadata
 ** automatically change focus to emacs
+** CANCELLED buttons in toolbar
+As a user, I would like to access the org-capture functionality from a toolbar.
+*** DONE research toolbar api
+webextension api does not provide this currently. see https://bugzilla.mozilla.org/show_bug.cgi?id=1215064
+*** TODO add custom toolbar with dummy button
+*** TODO wire button to capture function
