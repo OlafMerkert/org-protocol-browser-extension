@@ -53,11 +53,11 @@ Additional actions should include:
 + open in eww
 + capture JIRA task
 + capture pull request
-*** TODO smaller component for other actions
+*** DONE smaller component for other actions
 + smaller rectangular button
-*** TODO larger component for frequent actions
+*** DONE larger component for frequent actions
 + large square button
-*** TODO polish styles
+*** IN-PROGRESS polish styles
 ** REFINE Keyboard shortcuts
 As a power user, I would like to invoke org-capture and other org tasks with a custom keyboard shortcut.
 ** end user documentation

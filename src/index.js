@@ -22,7 +22,7 @@ const App = props => (
     <RareAction handler={handleCopySelection} label="Copy Selection" />
     <RareAction handler={handleSendMail} label="Send Mail" />
     <RareAction handler={handleOpenInEmacsBrowser} label="Open in eww" />
-    <RareAction handler={handleCaptureWithTemplate("R")} label="Capture Pull Request" />
+    <RareAction handler={handleCaptureWithTemplate("R")} label="Capture PR" />
     <RareAction handler={handleCaptureWithTemplate("J")} label="Capture JIRA task" />
   </ActionList>
 );
