@@ -1,8 +1,11 @@
 #+TODO: REFINE TODO IN-PROGRESS DONE
 
 * Stories
-** IN-PROGRESS working general capture
+** IN-PROGRESS working general capture                                    :mvp:
 As a user, I want to invoke org-capture by clicking a button.
+*** TODO build and invoke org-protocol url
+*** TODO get title and url from active browser tab
+*** TODO get current selection
 ** REFINE buttons in toolbar
 As a user, I would like to access the org-capture functionality from a toolbar.
 ** automatic detection of capture type
@@ -17,3 +20,7 @@ As a user, I want to
 As a user, I only need the most frequently used actions accessible with one click. Less frequently used actions should be collected in a menu.
 ** Keyboard shortcuts
 As a power user, I would like to invoke org-capture and other org tasks with a custom keyboard shortcut.
+** end user documentation
++ readme
++ package metadata
++ manifest metadata
