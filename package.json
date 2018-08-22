@@ -1,5 +1,5 @@
 {
-  "name": "Org Protocol Browser Extension",
+  "name": "org-protocol-browser-extension",
   "version": "1.0",
   "description": "Trigger org-capture from the browser via org-protocol.",
   "license": "Apache-2.0",
