@@ -18,6 +18,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Org Protocol Browser Extension",
       filename: "capturePopup.html",
+      chunks: ["capturePopup"],
     }),
     new Visualizer({
       filename: path.join("..", "report", "bundle-size-report.html"),
@@ -29,5 +30,6 @@ module.exports = {
   },
   output: {
     path: distFolder,
+    filename: "[name].[contenthash].js",
   },
 };

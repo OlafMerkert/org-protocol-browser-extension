@@ -27,4 +27,6 @@ const App = props => (
   </ActionList>
 );
 
-render(<App />, document.getElementById("root-node"));
+const rootNode = document.createElement("div");
+document.body.appendChild(rootNode);
+render(<App />, rootNode);
