@@ -1,6 +1,7 @@
 import { assoc, curry, pipe } from "ramda";
 import { getActiveTab, getSelectionFromTab, getUrlAndTitleFromTab } from "./activeTabData";
 import { capture, copySelection, openInEmacsBrowser, sendMail, storeLink } from "./org";
+import { detectCaptureTemplate } from "./automaticCaptureTemplateSelection";
 
 const invokeWithUrlAndTitle = protocolHandler => async () => {
   const activeTab = await getActiveTab();
@@ -41,3 +42,10 @@ export const handleCopySelection = async () => {
   await copySelection({ selection });
   window.close();
 };
+
+export const handleAutomaticCapture = invokeWithUrlAndTitleAndSelection(
+  pipe(
+    detectCaptureTemplate,
+    capture
+  )
+);

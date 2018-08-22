@@ -1,17 +1,22 @@
 import React from "react";
 import { render } from "react-dom";
 import {
+  handleAutomaticCapture,
   handleCapture,
-  handleStoreLink,
+  handleCaptureWithTemplate,
   handleCopySelection,
-  handleSendMail,
   handleOpenInEmacsBrowser,
+  handleSendMail,
+  handleStoreLink,
 } from "./protocolInvocation";
 
 const App = props => (
   <div>
     <div>
       <button onClick={handleCapture}>Capture</button>
+    </div>
+    <div>
+      <button onClick={handleAutomaticCapture}>Automatic Capture</button>
     </div>
     <div>
       <button onClick={handleStoreLink}>Store Link</button>
