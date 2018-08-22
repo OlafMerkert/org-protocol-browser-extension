@@ -33,6 +33,6 @@
   },
 
   "background": {
-    "scripts": ["captureKeys.js"]
+    "scripts": <%= JSON.stringify(htmlWebpackPlugin.files.js) %>
   }
 }

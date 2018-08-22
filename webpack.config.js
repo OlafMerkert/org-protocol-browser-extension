@@ -2,6 +2,7 @@ const path = require("path");
 const Visualizer = require("webpack-visualizer-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const distFolder = path.resolve(__dirname, "target", "dist");
 
@@ -20,6 +21,13 @@ module.exports = {
       filename: "capturePopup.html",
       chunks: ["capturePopup"],
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "templates", "manifest.json.template"),
+      inject: false,
+      filename: "manifest.json",
+      chunks: ["captureKeys"],
+    }),
+    new CopyWebpackPlugin([{ from: "icons/*.png" }]),
     new Visualizer({
       filename: path.join("..", "report", "bundle-size-report.html"),
     }),
