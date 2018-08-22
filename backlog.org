@@ -70,12 +70,19 @@ As a power user, I would like to invoke org-capture and other org tasks with a c
 *** DONE add commands with keybinding to manifest
 *** DONE adjust build to create background script
 *** DONE handle commands in background script
-** IN-PROGRESS end user documentation [4/5]
+** DONE end user documentation [5/5]
 *** DONE use public domain icon
 *** DONE package metadata
 *** DONE manifest metadata
 *** DONE license
-*** TODO readme
+*** DONE readme
+** REFINE package the web-extension
+As a user, I would like to install the extension like any other addon.
+
+*** TODO generate html file for popup automatically, or move to dist?
+*** TODO use target as output directory
+*** TODO use web-ext build for packaging
+ensure that only needed files are included in the artifact.
 ** REFINE cross-browser compatibility
 As a user, I would like to use the extension in the following browsers:
 + Firefox
