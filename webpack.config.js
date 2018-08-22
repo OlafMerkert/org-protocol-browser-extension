@@ -9,4 +9,8 @@ module.exports = {
   },
   devtool: "source-map",
   plugins: [new Visualizer({ filename: "./bundle-size-report.html" })],
+  entry: {
+    capturePopup: "./src/capturePopup.js",
+    captureKeys: "./src/captureKeys.js",
+  },
 };

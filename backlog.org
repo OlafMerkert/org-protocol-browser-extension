@@ -68,7 +68,7 @@ As a power user, I would like to invoke org-capture and other org tasks with a c
 | open in eww       | <f2>   |
 
 *** DONE add commands with keybinding to manifest
-*** TODO adjust build to create background script
+*** DONE adjust build to create background script
 *** TODO handle commands in background script
 ** end user documentation
 + readme

@@ -27,5 +27,9 @@
       "suggested_key": { "default": "F2" },
       "description": "Open in eww"
     }
+  },
+
+  "background": {
+    "scripts": ["dist/captureKeys.js"]
   }
 }
