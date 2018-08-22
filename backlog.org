@@ -7,12 +7,12 @@ As a user, I want to invoke org-capture by clicking a button.
 *** DONE build and invoke org-protocol url
 *** DONE get title and url from active browser tab
 *** DONE get current selection
-** TODO other actions beside capture
+** IN-PROGRESS other actions beside capture
 As a user, I want to
-+ store links
-+ copy the current selection
-+ send a e-mail with a link of the current page
-+ open a page in the emacs browser
+*** DONE store links
+*** TODO copy the current selection
+*** TODO send a e-mail with a link of the current page
+*** TODO open a page in the emacs browser
 ** automatic detection of capture type
 As a user, I would like pull requests and JIRA tasks automatically trigger the correct capture target
 ** organised menu with org tasks
