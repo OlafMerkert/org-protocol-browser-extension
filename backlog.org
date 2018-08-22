@@ -13,7 +13,9 @@ As a user, I want to
 *** DONE copy the current selection
 *** DONE send a e-mail with a link of the current page
 *** DONE open a page in the emacs browser
-** REFINE automatic detection of capture type
+** TODO automatically change focus to emacs
+As a user, I do not want to have to manually switch focus to Emacs. Moreover, the action popup should close automatically.
+** TODO automatic detection of capture type
 As a user, I would like pull requests and JIRA tasks automatically trigger the correct capture target. 
 
 For now, there should be another button labelled "Automatic capture".
@@ -28,16 +30,28 @@ For now, there should be another button labelled "Automatic capture".
 + JIRA issue (template key J):
   https://jira.somewhere.com/browse/TM-3479
 
-** REFINE organised menu with org tasks
++ As fallback, we should use the normal capture option without predefined template key
+
+** TODO organised menu with org tasks
 As a user, I only need the most frequently used actions accessible with one click. Less frequently used actions should be collected in a menu.
+
+Frequent actions are:
++ automatic capture
++ store link
+
+Additional actions should include:
++ capture
++ copy selection
++ send email
++ open in eww
++ capture JIRA task
++ capture pull request
 ** Keyboard shortcuts
 As a power user, I would like to invoke org-capture and other org tasks with a custom keyboard shortcut.
 ** end user documentation
 + readme
 + package metadata
 + manifest metadata
-** automatically change focus to emacs
-As a user, I do not want to have to manually switch focus to Emacs. Moreover, the action popup should close automatically.
 ** cross-browser compatibility
 As a user, I would like to use the extension in the following browsers:
 + Firefox
@@ -49,3 +63,7 @@ As a user, I would like to access the org-capture functionality from a toolbar.
 webextension api does not provide this currently. see https://bugzilla.mozilla.org/show_bug.cgi?id=1215064
 *** TODO add custom toolbar with dummy button
 *** TODO wire button to capture function
+** automatic capture for appointments from zimbra and outlook
+As a user, I want to conveniently copy appointments from Zimbra to org.
+
+Should this even use browser capture?
