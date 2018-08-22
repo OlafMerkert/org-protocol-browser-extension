@@ -9,7 +9,7 @@
   "permissions": ["activeTab", "tabs"],
 
   "browser_action": {
-    "default_icon": "icons/org-mode-unicorn-logo.png",
+    "default_icon": "icons/capture-org.png",
     "default_title": "Org Protocol",
     "default_popup": "protocol-actions.html"
   },

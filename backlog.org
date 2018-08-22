@@ -70,11 +70,11 @@ As a power user, I would like to invoke org-capture and other org tasks with a c
 *** DONE add commands with keybinding to manifest
 *** DONE adjust build to create background script
 *** DONE handle commands in background script
-** TODO end user documentation [0/5]
+** IN-PROGRESS end user documentation [1/5]
 *** TODO readme
 *** TODO package metadata
 *** TODO manifest metadata
-*** TODO use public domain icon
+*** DONE use public domain icon
 *** TODO license
 ** cross-browser compatibility
 As a user, I would like to use the extension in the following browsers:
