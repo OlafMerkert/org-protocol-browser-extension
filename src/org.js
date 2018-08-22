@@ -1,16 +1,30 @@
-import { forEachObjIndexed } from "ramda";
+import { join, map, pipe, toPairs } from "ramda";
 
-export const orgProtocolUrlBuilder = name => parameters => {
-  const url = new URL(`org-protocol://${name}`);
-  forEachObjIndexed(
-    (value, name) => url.searchParams.append(name, value),
-    parameters
+export const orgProtocolUrlBuilder = name => {
+  const baseUrl = `org-protocol://${name}`;
+  const prependBaseUrl = parameters =>
+    parameters ? `${baseUrl}?${parameters}` : baseUrl;
+  const encodeParameter = ([name, value]) =>
+    `${name}=${encodeURIComponent(value)}`;
+
+  return pipe(
+    toPairs,
+    map(encodeParameter),
+    join("&"),
+    prependBaseUrl
   );
-  return url.toString();
 };
 
-export const capture = orgProtocolUrlBuilder("capture");
-export const storeLink = orgProtocolUrlBuilder("store-link");
-export const emacsBrowser = orgProtocolUrlBuilder("w3m");
-export const copySelection = orgProtocolUrlBuilder("cpsel");
-export const sendMail = orgProtocolUrlBuilder("email");
+const openUrl = url => browser.tabs.update({ url });
+
+const openOrgProtocolUrl = name =>
+  pipe(
+    orgProtocolUrlBuilder(name),
+    openUrl
+  );
+
+export const capture = openOrgProtocolUrl("capture");
+export const storeLink = openOrgProtocolUrl("store-link");
+export const emacsBrowser = openOrgProtocolUrl("w3m");
+export const copySelection = openOrgProtocolUrl("cpsel");
+export const sendMail = openOrgProtocolUrl("email");

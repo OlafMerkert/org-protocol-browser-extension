@@ -3,7 +3,7 @@
 * Stories
 ** IN-PROGRESS working general capture                                    :mvp:
 As a user, I want to invoke org-capture by clicking a button.
-*** TODO build and invoke org-protocol url
+*** DONE build and invoke org-protocol url
 *** TODO get title and url from active browser tab
 *** TODO get current selection
 ** REFINE buttons in toolbar
