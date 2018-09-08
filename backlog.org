@@ -87,11 +87,19 @@ ensure that only needed files are included in the artifact.
 Requires an account at Mozilla.
 Signing can be done using web-ext, too.
 
-** cross-browser compatibility
+** REFINE cross-browser compatibility
 As a user, I would like to use the extension in the following browsers:
 + Firefox
 + Chrome
 + Chromium
+*** DONE try to load current version of extension in chrome
+[[chrome://extensions/]]
+*** DONE ensure manifest is compatible
++ keybinding definition: F keys are not supported
+*** IN-PROGRESS port use of web extension api
+[[https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Chrome_incompatibilities][Chrome incompatibilities - Mozilla | MDN]]
+[[https://github.com/mozilla/webextension-polyfill][GitHub - mozilla/webextension-polyfill]]
+*** TODO update README with keybindings
 ** CANCELLED buttons in toolbar
 As a user, I would like to access the org-capture functionality from a toolbar.
 *** DONE research toolbar api
