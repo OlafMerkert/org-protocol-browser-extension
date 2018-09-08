@@ -1,4 +1,5 @@
 import { join, map, pipe, toPairs } from "ramda";
+import { getActiveTab } from "./activeTabData";
 
 export const orgProtocolUrlBuilder = name => {
   const baseUrl = `org-protocol://${name}`;
@@ -13,7 +14,12 @@ export const orgProtocolUrlBuilder = name => {
   );
 };
 
-const openUrl = url => (window.browser || chrome).tabs.update({ url });
+const openUrl = async url => {
+  const activeTab = await getActiveTab();
+  (window.browser || chrome).tabs.update(activeTab.id, {
+    url,
+  });
+};
 
 const openOrgProtocolUrl = name =>
   pipe(
