@@ -33,6 +33,7 @@
   },
 
   "background": {
+    "persistent": false,
     "scripts": <%= JSON.stringify(htmlWebpackPlugin.files.js) %>
   }
 }
