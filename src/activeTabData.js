@@ -1,7 +1,5 @@
 import { join, pick } from "ramda";
 
-const getCurrentWindowId = () => (window.browser || chrome).windows.WINDOW_ID_CURRENT;
-
 const tabsQuery = window.browser
   ? browser.tabs.query
   : payload => new Promise(resolve => chrome.tabs.query(payload, resolve));
@@ -11,9 +9,9 @@ const tabExecuteScript = window.browser
   : (tabId, payload) => new Promise(resolve => chrome.tabs.executeScript(tabId, payload, resolve));
 
 export const getActiveTab = async () => {
-  const tabs = await tabsQuery({
+  let tabs = await tabsQuery({
     active: true,
-    windowId: getCurrentWindowId(),
+    lastFocusedWindow: true,
   });
   return tabs[0];
 };
