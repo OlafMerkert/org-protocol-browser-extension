@@ -22,7 +22,7 @@ Install [[https://nodejs.org/en/][Node.js]] and the [[https://yarnpkg.com/lang/e
 | capture              | capture              | title, url, body             |
 | copy selection       | cpsel                | selection                    |
 | send email           | email                | title, url                   |
-| open in eww          | w3m                  | title, url                   |
+| open in eww          | textbrowser          | title, url                   |
 | capture JIRA task    | capture              | title, url, body, template=J |
 | capture pull request | capture              | title, url, body, template=R |
 
