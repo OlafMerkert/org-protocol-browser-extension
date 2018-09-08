@@ -19,15 +19,15 @@
 
   "commands": {
     "automatic-capture": {
-      "suggested_key": { "default": "Ctrl+Home" },
+      "suggested_key": { "default": "Ctrl+Shift+K" },
       "description": "Automatic Capture"
     },
     "store-link": {
-      "suggested_key": { "default": "Ctrl+End" },
+      "suggested_key": { "default": "Ctrl+Shift+L" },
       "description": "Store Link"
     },
     "open-in-emacs-browser": {
-      "suggested_key": { "default": "Ctrl+Shift+Home" },
+      "suggested_key": { "default": "Ctrl+B" },
       "description": "Open in eww"
     }
   },
