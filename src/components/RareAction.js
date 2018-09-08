@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@blueprintjs/core";
 
 const rareActionStyle = {
-  width: "8rem",
+  width: "10rem",
   height: "2rem",
   textAlign: "center",
 };

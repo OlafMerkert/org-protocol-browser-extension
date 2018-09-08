@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@blueprintjs/core";
 
 const frequentActionStyle = {
-  width: "8rem",
+  width: "10rem",
   height: "4rem",
   textAlign: "center",
   fontWeight: "bold",
