@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const Visualizer = require("webpack-visualizer-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -15,6 +16,9 @@ module.exports = {
   },
   devtool: "source-map",
   plugins: [
+    new webpack.ProvidePlugin({
+      browser: "webextension-polyfill",
+    }),
     new CleanWebpackPlugin([distFolder]),
     new HtmlWebpackPlugin({
       title: "Org Protocol Browser Extension",
