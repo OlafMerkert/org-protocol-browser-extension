@@ -13,7 +13,7 @@ export const orgProtocolUrlBuilder = name => {
   );
 };
 
-const openUrl = url => browser.tabs.update({ url });
+const openUrl = url => (window.browser || chrome).tabs.update({ url });
 
 const openOrgProtocolUrl = name =>
   pipe(
