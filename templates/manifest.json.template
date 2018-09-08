@@ -19,11 +19,11 @@
 
   "commands": {
     "automatic-capture": {
-      "suggested_key": { "default": "Ctrl+Shift+K" },
+      "suggested_key": { "default": "Ctrl+M" },
       "description": "Automatic Capture"
     },
     "store-link": {
-      "suggested_key": { "default": "Ctrl+Shift+L" },
+      "suggested_key": { "default": "Ctrl+I" },
       "description": "Store Link"
     },
     "open-in-emacs-browser": {
