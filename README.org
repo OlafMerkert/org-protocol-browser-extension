@@ -32,8 +32,8 @@ The automatic capture command applies some simple heuristics to the urls and aut
 + issue page on JIRA
 + selected issue on a JIRA board, it will also try to generate a link to the issue page
 *** Keybindings
-| command           | key   |
-|-------------------+-------|
-| automatic capture | C-S-K |
-| store link        | C-S-L |
-| open in eww       | C-B   |
+| command           | key |
+|-------------------+-----|
+| automatic capture | C-M |
+| store link        | C-I |
+| open in eww       | C-B |
