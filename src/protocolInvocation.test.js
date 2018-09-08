@@ -43,7 +43,7 @@ describe("The protocol handlers", () => {
   it("sends the correct protocol invocation for opening a browser", async () => {
     await handleOpenInEmacsBrowser();
     expect(tabUpdateMock).toBeCalledWith({
-      url: "org-protocol://w3m?title=exampleTitle&url=exampleUrl",
+      url: "org-protocol://textbrowser?title=exampleTitle&url=exampleUrl",
     });
   });
 
