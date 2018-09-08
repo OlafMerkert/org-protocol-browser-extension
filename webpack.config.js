@@ -6,6 +6,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const distFolder = path.resolve(__dirname, "target", "dist");
 
+const currentVersion = process.env.npm_package_version;
+
 module.exports = {
   module: {
     rules: [
@@ -26,6 +28,7 @@ module.exports = {
       inject: false,
       filename: "manifest.json",
       chunks: ["captureKeys"],
+      currentVersion,
     }),
     new CopyWebpackPlugin([{ from: "icons/*.png" }]),
     new Visualizer({

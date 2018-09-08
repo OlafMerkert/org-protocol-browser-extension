@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Org Protocol Browser Extension",
-  "version": "1.1",
+  "version": <%= JSON.stringify(htmlWebpackPlugin.options.currentVersion) %>,
   "description": "Trigger org-capture from the browser via org-protocol.",
   "author": "Olaf Merkert",
 
