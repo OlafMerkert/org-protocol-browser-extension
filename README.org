@@ -2,7 +2,7 @@
 ** About
 Firefox has for some time been blocking simple bookmarklets for invoking org-protocol on sites with strict CSP settings. The browser extension brings help by providing shortcuts and action buttons to replace these particular bookmarklets.
 
-This browser extension is currently targeted only at Firefox.
+This browser extension is currently targeted at Firefox and Chrome.
 ** Build it
 Install [[https://nodejs.org/en/][Node.js]] and the [[https://yarnpkg.com/lang/en/][Yarn]] package manager. In the main repository directory, run
 #+BEGIN_SRC sh
@@ -11,7 +11,8 @@ Install [[https://nodejs.org/en/][Node.js]] and the [[https://yarnpkg.com/lang/e
 > yarn package
 #+END_SRC
 ** Run it
-In development mode: go to ~about:debugging~ in Firefox and temporary load the extension by selecting the zip file created in the target directory by the build.
++ In development mode for Firefox: go to [[about:debugging]] and temporary load the extension by selecting the zip file created in the target directory by the build.
++ In development mode for Chrome: got to [[chrome://extensions]] and load the extension by selecting the ~target/dist~ folder.
 ** Features
 *** Available org-protocol targets
 | label                | org-protocol handler | parameters                   |
