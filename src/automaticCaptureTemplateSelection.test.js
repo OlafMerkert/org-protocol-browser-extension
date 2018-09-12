@@ -26,6 +26,16 @@ describe("The automatic selection of a capture template", () => {
     expect(actualParameters).toEqual({ ...exampleParameters, template: "R" });
   });
 
+  it("detects a JIRA pull request based on the URL", () => {
+    const exampleParameters = {
+      title: "exampleTitle",
+      url: "https://someserver/projects/TM/repos/tm5/pull-requests/6/overview",
+      body: "exampleSelection",
+    };
+    const actualParameters = detectCaptureTemplate(exampleParameters);
+    expect(actualParameters).toEqual({ ...exampleParameters, template: "R" });
+  });
+
   it("detects a JIRA issue page base on the URL", () => {
     const exampleParameters = {
       title: "exampleTitle",

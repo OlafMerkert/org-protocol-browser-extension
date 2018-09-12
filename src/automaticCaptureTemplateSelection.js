@@ -25,6 +25,10 @@ export const detectCaptureTemplate = parameters => {
   if (testUrl(tfsPRPattern)) {
     return withTemplate(CAPTURE_TEMPLATE_KEYS.PULL_REQUEST);
   }
+  const bitbucketPRPattern = /projects.*repos.*pull-requests/;
+  if (testUrl(bitbucketPRPattern)) {
+    return withTemplate(CAPTURE_TEMPLATE_KEYS.PULL_REQUEST);
+  }
   const jiraIssuePattern = /jira.*browse/;
   if (testUrl(jiraIssuePattern)) {
     return withTemplate(CAPTURE_TEMPLATE_KEYS.JIRA_TASK);
