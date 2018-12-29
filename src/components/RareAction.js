@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@blueprintjs/core";
 
 const rareActionStyle = {
   width: "10rem",
@@ -8,7 +7,7 @@ const rareActionStyle = {
 };
 
 export const RareAction = ({ label, handler }) => (
-  <Button style={rareActionStyle} onClick={handler}>
+  <button style={rareActionStyle} onClick={handler}>
     {label}
-  </Button>
+  </button>
 );

@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@blueprintjs/core";
 
 const frequentActionStyle = {
   width: "10rem",
@@ -11,7 +10,7 @@ const frequentActionStyle = {
 };
 
 export const FrequentAction = ({ label, handler }) => (
-  <Button style={frequentActionStyle} intent="primary" large={true} onClick={handler}>
+  <button style={frequentActionStyle} intent="primary" large={true} onClick={handler}>
     {label}
-  </Button>
+  </button>
 );

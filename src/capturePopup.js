@@ -12,7 +12,6 @@ import {
   handleSendMail,
   handleStoreLink,
 } from "./protocolInvocation";
-import "@blueprintjs/core/lib/css/blueprint.css";
 
 const App = props => (
   <ActionList>
