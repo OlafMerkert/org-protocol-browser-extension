@@ -102,10 +102,10 @@ As a user, I would like to access the org-capture functionality from a toolbar.
 webextension api does not provide this currently. see https://bugzilla.mozilla.org/show_bug.cgi?id=1215064
 *** TODO add custom toolbar with dummy button
 *** TODO wire button to capture function
+** IN-PROGRESS sign the web-extension
+Requires an account at Mozilla.
+Signing can be done using web-ext, too.
 ** REFINE automatic capture for appointments from Zimbra and Outlook
 As a user, I want to conveniently copy appointments from Zimbra to org.
 
 Should this even use browser capture?
-** CANCELLED sign the web-extension
-Requires an account at Mozilla.
-Signing can be done using web-ext, too.
