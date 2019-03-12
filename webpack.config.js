@@ -17,7 +17,11 @@ module.exports = {
   },
   devtool: "source-map",
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: false, // needed so icons are not deleted in watch mode
+      // cleanOnceBeforeBuildPatterns: ["**/*", "!icons/*.png"],
+      // cleanAfterEveryBuildPatterns: [],
+    }),
     new HtmlWebpackPlugin({
       title: "Org Protocol Browser Extension",
       filename: "capturePopup.html",
