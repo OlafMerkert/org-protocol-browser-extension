@@ -10,7 +10,7 @@ const frequentActionStyle = {
 };
 
 export const FrequentAction = ({ label, handler }) => (
-  <button style={frequentActionStyle} intent="primary" large={true} onClick={handler}>
+  <button style={frequentActionStyle} onClick={handler}>
     {label}
   </button>
 );
