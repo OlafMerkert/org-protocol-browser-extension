@@ -17,7 +17,7 @@ module.exports = {
   },
   devtool: "source-map",
   plugins: [
-    new CleanWebpackPlugin([distFolder]),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Org Protocol Browser Extension",
       filename: "capturePopup.html",
