@@ -18,9 +18,7 @@ module.exports = {
   devtool: "source-map",
   plugins: [
     new CleanWebpackPlugin({
-      cleanStaleWebpackAssets: false, // needed so icons are not deleted in watch mode
-      // cleanOnceBeforeBuildPatterns: ["**/*", "!icons/*.png"],
-      // cleanAfterEveryBuildPatterns: [],
+      cleanAfterEveryBuildPatterns: ['!icons/*.png'], // needed so icons are not deleted in watch mode
     }),
     new HtmlWebpackPlugin({
       title: "Org Protocol Browser Extension",
