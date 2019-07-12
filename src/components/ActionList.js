@@ -5,7 +5,7 @@ const actionListStyle = {
   gridTemplateColumns: "repeat(2, 1fr)",
   gridTemplateRows: "repeat(5, 1fr)",
   gridAutoFlow: "column",
-  gridGap: "0.1rem",
+  gridGap: "0.2rem",
 };
 
 export const ActionList = ({ children }) => <div style={actionListStyle}>{children}</div>;

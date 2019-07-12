@@ -1,7 +1,7 @@
 import React from "react";
 
 const rareActionStyle = {
-  width: "10rem",
+  width: "12rem",
   height: "2rem",
   textAlign: "center",
 };

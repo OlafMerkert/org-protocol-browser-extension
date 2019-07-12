@@ -1,8 +1,8 @@
 import React from "react";
 
 const frequentActionStyle = {
-  width: "10rem",
-  height: "4rem",
+  width: "12rem",
+  height: "4.2rem",
   textAlign: "center",
   fontWeight: "bold",
   fontSize: "16pt",
