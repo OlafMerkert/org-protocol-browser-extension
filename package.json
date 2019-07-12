@@ -35,7 +35,7 @@
     "build:dev": "webpack --mode development --watch",
     "package": "web-ext build -s target/dist -a target --overwrite-dest",
     "lint:extension": "web-ext lint -s target/dist",
-    "package:signed": "web-ext sign -s target/dist -a target --overwrite-dest",
+    "package:signed": "web-ext sign -s target/dist -a target --overwrite-dest --id=\"{c53e484f-cf8d-4da3-a33f-4f69674f6b1b}\"",
     "start": "web-ext run",
     "test": "jest",
     "format": "prettier --write **/*.js **/*.json"
