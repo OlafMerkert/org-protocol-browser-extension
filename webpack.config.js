@@ -1,6 +1,6 @@
 const path = require("path");
 const Visualizer = require("webpack-visualizer-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
@@ -18,7 +18,7 @@ module.exports = {
   devtool: "source-map",
   plugins: [
     new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: ['!icons/*.png'], // needed so icons are not deleted in watch mode
+      cleanAfterEveryBuildPatterns: ["!icons/*.png"], // needed so icons are not deleted in watch mode
     }),
     new HtmlWebpackPlugin({
       title: "Org Protocol Browser Extension",
