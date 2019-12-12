@@ -6,12 +6,7 @@ export const orgProtocolUrlBuilder = name => {
   const prependBaseUrl = parameters => (parameters ? `${baseUrl}?${parameters}` : baseUrl);
   const encodeParameter = ([name, value]) => `${name}=${encodeURIComponent(value)}`;
 
-  return pipe(
-    toPairs,
-    map(encodeParameter),
-    join("&"),
-    prependBaseUrl
-  );
+  return pipe(toPairs, map(encodeParameter), join("&"), prependBaseUrl);
 };
 
 const openUrl = async url => {
@@ -21,11 +16,7 @@ const openUrl = async url => {
   });
 };
 
-const openOrgProtocolUrl = name =>
-  pipe(
-    orgProtocolUrlBuilder(name),
-    openUrl
-  );
+const openOrgProtocolUrl = name => pipe(orgProtocolUrlBuilder(name), openUrl);
 
 export const capture = openOrgProtocolUrl("capture");
 export const storeLink = openOrgProtocolUrl("store-link");

@@ -20,12 +20,7 @@ const invokeWithUrlAndTitleAndSelection = protocolHandler => async () => {
 
 export const handleCapture = invokeWithUrlAndTitleAndSelection(capture);
 
-const captureWithTemplate = curry(
-  pipe(
-    assoc("template"),
-    capture
-  )
-);
+const captureWithTemplate = curry(pipe(assoc("template"), capture));
 
 export const handleCaptureWithTemplate = pipe(
   captureWithTemplate,
@@ -44,8 +39,5 @@ export const handleCopySelection = async () => {
 };
 
 export const handleAutomaticCapture = invokeWithUrlAndTitleAndSelection(
-  pipe(
-    detectCaptureTemplate,
-    capture
-  )
+  pipe(detectCaptureTemplate, capture)
 );
