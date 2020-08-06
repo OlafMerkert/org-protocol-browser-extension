@@ -32,7 +32,7 @@ module.exports = {
       chunks: ["captureKeys"],
       currentVersion,
     }),
-    new CopyWebpackPlugin([{ from: "icons/*.png" }]),
+    new CopyWebpackPlugin({ patterns: [{ from: "icons/*.png" }] }),
     new Visualizer({
       filename: path.join("..", "report", "bundle-size-report.html"),
     }),
