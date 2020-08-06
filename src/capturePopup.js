@@ -13,7 +13,7 @@ import {
   handleStoreLink,
 } from "./protocolInvocation";
 
-const App = props => (
+const App = (props) => (
   <ActionList>
     <FrequentAction handler={handleAutomaticCapture} label="Automatic Capture" />
     <FrequentAction handler={handleStoreLink} label="Store Link" />

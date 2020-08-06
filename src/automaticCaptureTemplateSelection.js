@@ -5,7 +5,7 @@ const CAPTURE_TEMPLATE_KEYS = {
   JIRA_TASK: "J",
 };
 
-const jiraBoardParameters = parameters => {
+const jiraBoardParameters = (parameters) => {
   const boardUrl = new URL(parameters.url);
   const taskId = boardUrl.searchParams.get("selectedIssue");
   const url = new URL(`/browse/${taskId}`, parameters.url).toString();
@@ -17,7 +17,7 @@ const jiraBoardParameters = parameters => {
   };
 };
 
-export const detectCaptureTemplate = parameters => {
+export const detectCaptureTemplate = (parameters) => {
   const testUrl = flip(test)(parameters.url);
   const withTemplate = flip(assoc("template"))(parameters);
 

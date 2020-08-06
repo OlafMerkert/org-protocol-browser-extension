@@ -10,7 +10,7 @@ const COMMANDS = {
   openInEmacsBrowser: "open-in-emacs-browser",
 };
 
-const keyCommandHandler = command => {
+const keyCommandHandler = (command) => {
   switch (command) {
     case COMMANDS.automaticCapture:
       return handleAutomaticCapture();

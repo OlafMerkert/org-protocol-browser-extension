@@ -1,7 +1,7 @@
 import { detectCaptureTemplate } from "./automaticCaptureTemplateSelection";
 
 describe("The automatic selection of a capture template", () => {
-  ["https://github.com/ramda/ramda/issues/736", "https://www.sl2z.de"].forEach(normalUrl => {
+  ["https://github.com/ramda/ramda/issues/736", "https://www.sl2z.de"].forEach((normalUrl) => {
     it("does not select a template for normal urls", () => {
       const exampleParameters = {
         title: "exampleTitle",
