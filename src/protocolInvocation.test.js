@@ -18,7 +18,7 @@ describe("The protocol handlers", () => {
     getSelectionFromTab.mockImplementation(() => Promise.resolve("exampleSelection"));
     getUrlAndTitleFromTab.mockReturnValue({ title: "exampleTitle", url: "exampleUrl" });
 
-    global.browser = {
+    window.browser = {
       tabs: {
         update: tabUpdateMock,
       },
@@ -76,7 +76,7 @@ describe("The protocol handlers", () => {
     });
   });
 
-  it("sends the correct protocol invocation for automatic capture without detected template", async () => {
+  it("sends the correct protocol invocation for automatic capture without detected template (JIRA URL)", async () => {
     getUrlAndTitleFromTab.mockReturnValue({
       title: "exampleTitle",
       url: "https://jira.somewhere.com/browse/TM-3479",

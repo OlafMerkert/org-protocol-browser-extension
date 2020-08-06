@@ -47,7 +47,7 @@ describe("The automatic selection of a capture template", () => {
     expect(actualParameters).toEqual({ ...exampleParameters, template: "J" });
   });
 
-  it("detects a JIRA issue page base on the URL", () => {
+  it("detects a selected issue on a JIRA board based on the URL", () => {
     const exampleParameters = {
       title: "exampleTitle",
       url:
