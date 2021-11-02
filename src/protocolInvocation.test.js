@@ -17,12 +17,12 @@ describe("The protocol handlers", () => {
     getActiveTab.mockImplementation(() => Promise.resolve({ id: 18 }));
     getSelectionFromTab.mockImplementation(() => Promise.resolve("exampleSelection"));
     getUrlAndTitleFromTab.mockReturnValue({ title: "exampleTitle", url: "exampleUrl" });
-
     window.browser = {
       tabs: {
         update: tabUpdateMock,
       },
     };
+    window.close = jest.fn();
     tabUpdateMock.mockReset();
   });
 
