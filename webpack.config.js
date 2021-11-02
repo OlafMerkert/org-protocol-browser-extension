@@ -1,5 +1,4 @@
 const path = require("path");
-const Visualizer = require("webpack-visualizer-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -33,9 +32,6 @@ module.exports = {
       currentVersion,
     }),
     new CopyWebpackPlugin({ patterns: [{ from: "icons/*.png" }] }),
-    new Visualizer({
-      filename: path.join("..", "report", "bundle-size-report.html"),
-    }),
   ],
   entry: {
     capturePopup: "./src/capturePopup.js",
