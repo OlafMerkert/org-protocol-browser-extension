@@ -64,8 +64,7 @@ describe("The protocol handlers", () => {
   it("sends the correct protocol invocation for capture with a given template", async () => {
     await handleCaptureWithTemplate("J")();
     expect(tabUpdateMock).toBeCalledWith(18, {
-      url:
-        "org-protocol://capture?title=exampleTitle&url=exampleUrl&body=exampleSelection&template=J",
+      url: "org-protocol://capture?title=exampleTitle&url=exampleUrl&body=exampleSelection&template=J",
     });
   });
 
@@ -83,8 +82,7 @@ describe("The protocol handlers", () => {
     });
     await handleAutomaticCapture();
     expect(tabUpdateMock).toBeCalledWith(18, {
-      url:
-        "org-protocol://capture?title=exampleTitle&url=https%3A%2F%2Fjira.somewhere.com%2Fbrowse%2FTM-3479&body=exampleSelection&template=J",
+      url: "org-protocol://capture?title=exampleTitle&url=https%3A%2F%2Fjira.somewhere.com%2Fbrowse%2FTM-3479&body=exampleSelection&template=J",
     });
   });
 });

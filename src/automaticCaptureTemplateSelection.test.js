@@ -17,8 +17,7 @@ describe("The automatic selection of a capture template", () => {
   it("detects a TFS pull request based on the URL", () => {
     const exampleParameters = {
       title: "exampleTitle",
-      url:
-        "http://someserver:8080/tfs/DefaultCollection/someProject/someTeam/_git/someRepo/pullrequest/2134#_a=overview",
+      url: "http://someserver:8080/tfs/DefaultCollection/someProject/someTeam/_git/someRepo/pullrequest/2134#_a=overview",
       body: "exampleSelection",
     };
 
@@ -50,8 +49,7 @@ describe("The automatic selection of a capture template", () => {
   it("detects a selected issue on a JIRA board based on the URL", () => {
     const exampleParameters = {
       title: "exampleTitle",
-      url:
-        "https://jira.somewhere.com/secure/RapidBoard.jspa?rapidView=100&view=detail&selectedIssue=TM-3479",
+      url: "https://jira.somewhere.com/secure/RapidBoard.jspa?rapidView=100&view=detail&selectedIssue=TM-3479",
       body: "exampleSelection",
     };
 
