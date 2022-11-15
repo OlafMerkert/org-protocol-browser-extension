@@ -12,6 +12,7 @@ import {
   handleSendMail,
   handleStoreLink,
 } from "./protocolInvocation";
+import "./popup.css";
 
 const App = () => (
   <ActionList>
