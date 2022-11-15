@@ -1,13 +1,9 @@
 import { join, pick } from "ramda";
 
-const tabsQuery = window.browser
-  ? browser.tabs.query
-  : (payload) => new Promise((resolve) => chrome.tabs.query(payload, resolve));
+const tabsQuery = (payload) => new Promise((resolve) => chrome.tabs.query(payload, resolve));
 
-const tabExecuteScript = window.browser
-  ? browser.tabs.executeScript
-  : (tabId, payload) =>
-      new Promise((resolve) => chrome.tabs.executeScript(tabId, payload, resolve));
+const tabExecuteScript = (tabId, payload) =>
+  new Promise((resolve) => chrome.tabs.executeScript(tabId, payload, resolve));
 
 export const getActiveTab = async () => {
   let tabs = await tabsQuery({

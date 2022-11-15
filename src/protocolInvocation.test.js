@@ -17,7 +17,7 @@ describe("The protocol handlers", () => {
     getActiveTab.mockImplementation(() => Promise.resolve({ id: 18 }));
     getSelectionFromTab.mockImplementation(() => Promise.resolve("exampleSelection"));
     getUrlAndTitleFromTab.mockReturnValue({ title: "exampleTitle", url: "exampleUrl" });
-    window.browser = {
+    window.chrome = {
       tabs: {
         update: tabUpdateMock,
       },

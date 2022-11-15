@@ -23,4 +23,4 @@ const keyCommandHandler = (command) => {
   }
 };
 
-(window.browser || chrome).commands.onCommand.addListener(keyCommandHandler);
+chrome.commands.onCommand.addListener(keyCommandHandler);

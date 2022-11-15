@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Org Protocol Browser Extension",
   "version": <%= JSON.stringify(htmlWebpackPlugin.options.currentVersion) %>,
   "description": "Trigger org-capture from the browser via org-protocol.",
@@ -11,7 +11,7 @@
 
   "permissions": ["activeTab", "tabs"],
 
-  "browser_action": {
+  "action": {
     "default_icon": "icons/capture-org.png",
     "default_title": "Org Protocol",
     "default_popup": "capturePopup.html"
@@ -33,7 +33,6 @@
   },
 
   "background": {
-    "persistent": false,
-    "scripts": <%= JSON.stringify(htmlWebpackPlugin.files.js) %>
+    "service_worker": <%= JSON.stringify(htmlWebpackPlugin.files.js[0]) %>
   }
 }

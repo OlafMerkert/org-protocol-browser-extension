@@ -11,9 +11,7 @@ export const orgProtocolUrlBuilder = (name) => {
 
 const openUrl = async (url) => {
   const activeTab = await getActiveTab();
-  (window.browser || chrome).tabs.update(activeTab.id, {
-    url,
-  });
+  chrome.tabs.update(activeTab.id, { url });
 };
 
 const openOrgProtocolUrl = (name) => pipe(orgProtocolUrlBuilder(name), openUrl);
