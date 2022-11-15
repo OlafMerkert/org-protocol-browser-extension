@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { ActionList } from "./components/ActionList";
 import { FrequentAction } from "./components/FrequentAction";
 import { RareAction } from "./components/RareAction";
@@ -26,6 +26,7 @@ const App = () => (
   </ActionList>
 );
 
-const rootNode = document.createElement("div");
-document.body.appendChild(rootNode);
-render(<App />, rootNode);
+const rootContainer = document.createElement("div");
+document.body.appendChild(rootContainer);
+const root = createRoot(rootContainer);
+root.render(<App />);
