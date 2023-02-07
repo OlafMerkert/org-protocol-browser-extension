@@ -35,6 +35,9 @@
   "background": {
     "scripts": [<%= JSON.stringify(htmlWebpackPlugin.files.js[0]) %>]
   },
+  "content_scripts": [
+    { "matches": ["https://*/*"], "js": [<%= JSON.stringify(htmlWebpackPlugin.files.js[1]) %>], "css": []}
+  ],
   "browser_specific_settings": {
     "gecko": { "id": "{c53e484f-cf8d-4da3-a33f-4f69674f6b1b}" }
   }
