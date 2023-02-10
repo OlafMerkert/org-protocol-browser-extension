@@ -65,3 +65,25 @@ const getTicketDataFromBoard = () => {
     }
   }
 };
+
+const getIssue = () => ({
+  id: document.querySelector("#key-val").attributes["data-issue-key"].value,
+  title: document.querySelector("#summary-val").textContent,
+});
+
+const getParent = () => {
+  const parentIssue = document.querySelector("#parent_issue_summary");
+  if (parentIssue) {
+    return { id: parentIssue.attributes["data-issue-key"].value };
+  }
+};
+
+const getTicketDataFromDetailPage = () => {
+  const issue = getIssue();
+  const parent = getParent();
+  if (parent) {
+    return { issue, parent };
+  } else {
+    return issue;
+  }
+};
