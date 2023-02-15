@@ -28,7 +28,7 @@ module.exports = {
       template: path.resolve(__dirname, "templates", "manifest.json.template"),
       inject: false,
       filename: "manifest.json",
-      chunks: ["captureKeys", "jiraTasks"],
+      chunks: ["captureKeys", "jiraTasks", "textSelection"],
       currentVersion,
     }),
     new CopyWebpackPlugin({ patterns: [{ from: "icons/*.png" }] }),
@@ -37,6 +37,7 @@ module.exports = {
     capturePopup: "./src/capturePopup.js",
     captureKeys: "./src/captureKeys.js",
     jiraTasks: "./src/jiraTasks.js",
+    textSelection: "./src/textSelection.js",
   },
   output: {
     path: distFolder,

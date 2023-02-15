@@ -1,8 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { handleCopyIssueNumbersToClipboard } from "./clipboard";
 import { ActionList } from "./components/ActionList";
 import { FrequentAction } from "./components/FrequentAction";
 import { RareAction } from "./components/RareAction";
+import "./popup.css";
 import {
   handleAutomaticCapture,
   handleCapture,
@@ -13,8 +15,6 @@ import {
   handleStoreLink,
   handleTimesheetEntryForIssue,
 } from "./protocolInvocation";
-import "./popup.css";
-import { handleCopyIssueNumbersToClipboard } from "./clipboard";
 
 const App = function () {
   return (

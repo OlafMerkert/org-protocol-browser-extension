@@ -1,14 +1,18 @@
 import { assoc, curry, pipe } from "ramda";
-import { getActiveTab, getSelectionFromTab, getUrlAndTitleFromTab } from "./activeTabData";
-import { capture, copySelection, openInEmacsBrowser, sendMail, storeLink, timesheet } from "./org";
+import { getActiveTab, getUrlAndTitleFromTab } from "./activeTabData";
 import { detectCaptureTemplate } from "./automaticCaptureTemplateSelection";
-import { getJiraTask } from "./contentCapture";
+import { getJiraTask, getSelectionFromTab } from "./contentCapture";
+import { capture, copySelection, openInEmacsBrowser, sendMail, storeLink, timesheet } from "./org";
+
+const closePopup = () => {
+  setTimeout(() => window.close(), 100);
+};
 
 const invokeWithUrlAndTitle = (protocolHandler) => async () => {
   const activeTab = await getActiveTab();
   const urlAndTitle = getUrlAndTitleFromTab(activeTab);
   await protocolHandler(urlAndTitle);
-  window.close();
+  closePopup();
 };
 
 const invokeWithUrlAndTitleAndSelection = (protocolHandler) => async () => {
@@ -16,7 +20,7 @@ const invokeWithUrlAndTitleAndSelection = (protocolHandler) => async () => {
   const urlAndTitle = getUrlAndTitleFromTab(activeTab);
   const selection = await getSelectionFromTab(activeTab);
   await protocolHandler({ ...urlAndTitle, body: selection });
-  window.close();
+  closePopup();
 };
 
 export const handleCapture = invokeWithUrlAndTitleAndSelection(capture);
@@ -36,7 +40,7 @@ export const handleCopySelection = async () => {
   const activeTab = await getActiveTab();
   const selection = await getSelectionFromTab(activeTab);
   await copySelection({ selection });
-  window.close();
+  closePopup();
 };
 
 export const handleAutomaticCapture = invokeWithUrlAndTitleAndSelection(
@@ -58,5 +62,5 @@ export const handleTimesheetEntryForIssue = async () => {
   } else {
     alert("No Issue selected!");
   }
-  window.close();
+  closePopup();
 };
