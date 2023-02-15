@@ -1,7 +1,8 @@
 import { assoc, curry, pipe } from "ramda";
 import { getActiveTab, getSelectionFromTab, getUrlAndTitleFromTab } from "./activeTabData";
-import { capture, copySelection, openInEmacsBrowser, sendMail, storeLink } from "./org";
+import { capture, copySelection, openInEmacsBrowser, sendMail, storeLink, timesheet } from "./org";
 import { detectCaptureTemplate } from "./automaticCaptureTemplateSelection";
+import { getJiraTask } from "./contentCapture";
 
 const invokeWithUrlAndTitle = (protocolHandler) => async () => {
   const activeTab = await getActiveTab();
@@ -41,3 +42,21 @@ export const handleCopySelection = async () => {
 export const handleAutomaticCapture = invokeWithUrlAndTitleAndSelection(
   pipe(detectCaptureTemplate, capture)
 );
+
+function formatIssueTimesheetDescription({ issue, parent }) {
+  if (parent) {
+    return `${parent.id} ${issue.id} ${issue.title}`;
+  } else {
+    return `${issue.id} ${issue.title}`;
+  }
+}
+
+export const handleTimesheetEntryForIssue = async () => {
+  const issueData = await getJiraTask();
+  if (issueData) {
+    timesheet({ description: formatIssueTimesheetDescription(issueData) });
+  } else {
+    alert("No Issue selected!");
+  }
+  window.close();
+};

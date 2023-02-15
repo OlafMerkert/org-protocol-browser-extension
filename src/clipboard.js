@@ -17,7 +17,7 @@ export const handleCopyIssueNumbersToClipboard = async () => {
   if (issueData) {
     writeClipboard(formatIssueNumber(issueData));
   } else {
-    // TODO alert?
+    alert("No Issue selected!");
   }
   window.close();
 };

@@ -21,3 +21,4 @@ export const storeLink = openOrgProtocolUrl("store-link");
 export const openInEmacsBrowser = openOrgProtocolUrl("textbrowser");
 export const copySelection = openOrgProtocolUrl("cpsel");
 export const sendMail = openOrgProtocolUrl("email");
+export const timesheet = openOrgProtocolUrl("timesheet");

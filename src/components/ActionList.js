@@ -2,9 +2,9 @@ import React from "react";
 
 const actionListStyle = {
   display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gridTemplateRows: "repeat(5, 1fr)",
-  gridAutoFlow: "column",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  gridTemplateRows: "repeat(*, 1fr)",
+  gridAutoFlow: "row",
   gridGap: "0.2rem",
 };
 
