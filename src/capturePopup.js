@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
 import { ActionList } from "./components/ActionList";
 import { FrequentAction } from "./components/FrequentAction";
@@ -13,22 +13,14 @@ import {
   handleStoreLink,
 } from "./protocolInvocation";
 import "./popup.css";
-import { getActiveTab } from "./activeTabData";
-
-const handleSendMessage = async (set) => {
-  const tab = await getActiveTab();
-  const response = await chrome.tabs.sendMessage(tab.id, { kind: "grab-jira-task" });
-  set(JSON.stringify(response));
-};
+import { handleCopyIssueNumbersToClipboard } from "./clipboard";
 
 const App = function () {
-  const [output, setOutput] = useState("initial");
   return (
     <ActionList>
-      {output}
+      <FrequentAction handler={handleCopyIssueNumbersToClipboard} label="Copy JIRA IDs" />
       <FrequentAction handler={handleAutomaticCapture} label="Automatic Capture" />
       <FrequentAction handler={handleStoreLink} label="Store Link" />
-      <FrequentAction handler={() => handleSendMessage(setOutput)} label="timekeep JIRA task" />
       <RareAction handler={handleCapture} label="Capture" />
       <RareAction handler={handleCopySelection} label="Copy Selection" />
       <RareAction handler={handleSendMail} label="Send Mail" />

@@ -94,7 +94,7 @@ function getTicketDataFromDetailPage() {
   if (parent) {
     return { issue, parent };
   } else {
-    return issue;
+    return { issue };
   }
 }
 
