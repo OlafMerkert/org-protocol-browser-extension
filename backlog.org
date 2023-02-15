@@ -109,15 +109,15 @@ Signing can be done using web-ext, too.
 As a user, I want to conveniently copy appointments from Zimbra to org.
 
 Should this even use browser capture?
-** TODO automatic capture of JIRA tickets for timekeeping
+** DONE automatic capture of JIRA tickets for timekeeping
 As a developer, I want to select a ticket (story, task or subtask) on a board or have it open in a dedicated tab.
 Then I want to book times on this ticket with id and ticket title. For subtasks, ideally also the story id is sent.
-*** TODO read ticket number and description for normal task on the board
-*** TODO read ticket number and description for subtask on the board
+*** DONE read ticket number and description for normal task on the board
+*** DONE read ticket number and description for subtask on the board
 including story id
-*** TODO read ticket number and description for story (with lane) on the board
-*** TODO read ticket number and description for task or story from its own window
-*** TODO read ticket number and description for subtask from its own window
+*** DONE read ticket number and description for story (with lane) on the board
+*** DONE read ticket number and description for task or story from its own window
+*** DONE read ticket number and description for subtask from its own window
 including story id
-*** TODO send ticket numbers and titles via org protocol
+*** DONE send ticket numbers and titles via org protocol
 
