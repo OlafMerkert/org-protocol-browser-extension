@@ -1,15 +1,19 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.kind === "grab-jira-task") {
-    console.log("grabbing text");
-    const content = "";
-    console.log({ content });
-    sendResponse({ content });
+    const issueData = getIssue();
+    if (issueData) {
+      sendResponse({ status: "issue-found", ...issueData });
+    } else {
+      sendResponse({ status: "no-issue-found" });
+    }
   }
 });
 
-const getSelectedCard = () => document.querySelector(".ghx-issue.ghx-selected");
+function getSelectedCard() {
+  return document.querySelector(".ghx-issue.ghx-selected");
+}
 
-const getSwimlaneOf = (element) => {
+function getSwimlaneOf(element) {
   if (!element) {
     return null;
   }
@@ -19,24 +23,28 @@ const getSwimlaneOf = (element) => {
   }
 
   return element;
-};
+}
 
-const getSelectedSwimlane = () => document.querySelector(".ghx-swimlane-header.ghx-selected");
+function getSelectedSwimlane() {
+  return document.querySelector(".ghx-swimlane-header.ghx-selected");
+}
 
-const getCardData = (card) => ({
-  id: card.querySelector(".ghx-key").textContent,
-  title: card.querySelector(".ghx-summary").textContent,
-});
+function getCardData(card) {
+  return {
+    id: card.querySelector(".ghx-key").textContent,
+    title: card.querySelector(".ghx-summary").textContent,
+  };
+}
 
-const stripFlagged = (text) => {
+function stripFlagged(text) {
   if (text.startsWith("Flagged")) {
     return text.substring("Flagged".length);
   } else {
     return text;
   }
-};
+}
 
-const getSwimlaneData = (lane) => {
+function getSwimlaneData(lane) {
   const keyElement = lane.querySelector(".ghx-parent-key");
   if (keyElement) {
     return {
@@ -46,9 +54,9 @@ const getSwimlaneData = (lane) => {
   } else {
     return null;
   }
-};
+}
 
-const getTicketDataFromBoard = () => {
+function getTicketDataFromBoard() {
   const selectedCard = getSelectedCard();
   if (selectedCard) {
     const parentOfSelected = getSwimlaneOf(selectedCard);
@@ -64,26 +72,44 @@ const getTicketDataFromBoard = () => {
       return { issue: getSwimlaneData(selectedLane) };
     }
   }
-};
+}
 
-const getIssue = () => ({
-  id: document.querySelector("#key-val").attributes["data-issue-key"].value,
-  title: document.querySelector("#summary-val").textContent,
-});
+function getIssueFromDetailPage() {
+  return {
+    id: document.querySelector("#key-val").attributes["data-issue-key"].value,
+    title: document.querySelector("#summary-val").textContent,
+  };
+}
 
-const getParent = () => {
+function getParentFromDetailPage() {
   const parentIssue = document.querySelector("#parent_issue_summary");
   if (parentIssue) {
     return { id: parentIssue.attributes["data-issue-key"].value };
   }
-};
+}
 
-const getTicketDataFromDetailPage = () => {
-  const issue = getIssue();
-  const parent = getParent();
+function getTicketDataFromDetailPage() {
+  const issue = getIssueFromDetailPage();
+  const parent = getParentFromDetailPage();
   if (parent) {
     return { issue, parent };
   } else {
     return issue;
   }
-};
+}
+
+function isDetailPage() {
+  return document.querySelector(".issue-view");
+}
+
+function isBoard() {
+  return document.querySelector("#ghx-pool");
+}
+
+function getIssue() {
+  if (isDetailPage()) {
+    return getTicketDataFromDetailPage();
+  } else if (isBoard()) {
+    return getTicketDataFromBoard();
+  }
+}
