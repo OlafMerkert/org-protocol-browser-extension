@@ -8,7 +8,6 @@ import "./popup.css";
 import {
   handleAutomaticCapture,
   handleCapture,
-  handleCaptureWithTemplate,
   handleCopySelection,
   handleOpenInEmacsBrowser,
   handleSendMail,
@@ -25,8 +24,6 @@ const App = function () {
       <FrequentAction handler={handleStoreLink} label="Store Link" />
       <RareAction handler={handleCapture} label="Capture" />
       <RareAction handler={handleCopySelection} label="Copy Selection" />
-      <RareAction handler={handleCaptureWithTemplate("R")} label="Capture PR" />
-      <RareAction handler={handleCaptureWithTemplate("J")} label="Capture JIRA task" />
       <RareAction handler={handleSendMail} label="Send Mail" />
       <RareAction handler={handleOpenInEmacsBrowser} label="Open in eww" />
     </ActionList>

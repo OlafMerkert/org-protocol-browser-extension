@@ -1,6 +1,5 @@
 import { assoc, curry, pipe } from "ramda";
 import { getActiveTab, getUrlAndTitleFromTab } from "./activeTabData";
-import { detectCaptureTemplate } from "./automaticCaptureTemplateSelection";
 import { getJiraTask, getSelectionFromTab } from "./contentCapture";
 import { capture, copySelection, openInEmacsBrowser, sendMail, storeLink, timesheet } from "./org";
 
@@ -43,9 +42,7 @@ export const handleCopySelection = async () => {
   closePopup();
 };
 
-export const handleAutomaticCapture = invokeWithUrlAndTitleAndSelection(
-  pipe(detectCaptureTemplate, capture)
-);
+export const handleAutomaticCapture = invokeWithUrlAndTitleAndSelection(capture);
 
 function formatIssueTimesheetDescription({ issue, parent }) {
   if (parent) {

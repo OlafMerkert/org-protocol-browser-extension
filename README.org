@@ -23,15 +23,10 @@ Install [[https://nodejs.org/en/][Node.js]] and the [[https://yarnpkg.com/lang/e
 | copy selection       | cpsel                | selection                    |
 | send email           | email                | title, url                   |
 | open in eww          | textbrowser          | title, url                   |
-| capture JIRA task    | capture              | title, url, body, template=J |
-| capture pull request | capture              | title, url, body, template=R |
 
 Note that some handlers are custom defined in my emacs configuration and may not be available in every configuration.
 *** Capture template based on page url
-The automatic capture command applies some simple heuristics to the urls and automatically selects a capture template for the following:
-+ pull request on Team Foundation Server
-+ issue page on JIRA
-+ selected issue on a JIRA board, it will also try to generate a link to the issue page
+Feature removed, automatic caputre and capture behave the same.
 *** Keybindings
 | command           | key |
 |-------------------+-----|
