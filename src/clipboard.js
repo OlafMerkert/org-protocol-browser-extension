@@ -22,3 +22,30 @@ export const handleCopyIssueNumbersToClipboard = async () => {
   }
   window.close();
 };
+
+function sanitiseBranchTitle(title) {
+  return title
+    .toLowerCase()
+    .replaceAll(" ", "-")
+    .replaceAll(":", "")
+    .replaceAll("/", "-")
+    .replaceAll("_", "-");
+}
+
+function formatIssueToBranchName({ issue, parent }) {
+  const branchTitle = sanitiseBranchTitle(issue.title);
+  if (parent) {
+    return `${parent.id}-${issue.id}-${branchTitle}`;
+  } else {
+    return `${issue.id}-${branchTitle}`;
+  }
+}
+
+export const handleCopyBranchNameToClipboard = async () => {
+  const issueData = await getJiraTask();
+  if (issueData) {
+    writeClipboard(formatIssueToBranchName(issueData));
+  } else {
+    alert(NO_ISSUE_SELECTED_MESSAGE);
+  }
+};

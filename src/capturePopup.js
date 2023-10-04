@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { handleCopyIssueNumbersToClipboard } from "./clipboard";
+import { handleCopyIssueNumbersToClipboard, handleCopyBranchNameToClipboard } from "./clipboard";
 import { ActionList } from "./components/ActionList";
 import { FrequentAction } from "./components/FrequentAction";
 import { RareAction } from "./components/RareAction";
@@ -24,6 +24,7 @@ const App = function () {
       <FrequentAction handler={handleAutomaticCapture} label="Automatic Capture" />
       <FrequentAction handler={handleStoreLink} label="Store Link" />
       <RareAction handler={handleCreateBranchFromIssue} label="Create Branch" />
+      <RareAction handler={handleCopyBranchNameToClipboard} label="Copy Branch Name" />
       <RareAction handler={handleCapture} label="Capture" />
       <RareAction handler={handleCopySelection} label="Copy Selection" />
       <RareAction handler={handleSendMail} label="Send Mail" />
