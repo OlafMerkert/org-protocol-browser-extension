@@ -10,6 +10,7 @@ import {
   storeLink,
   timesheet,
 } from "./org";
+import { NO_ISSUE_SELECTED_MESSAGE } from "./messages";
 
 const closePopup = () => {
   setTimeout(() => window.close(), 100);
@@ -65,7 +66,7 @@ export const handleTimesheetEntryForIssue = async () => {
   if (issueData) {
     timesheet({ description: formatIssueTimesheetDescription(issueData) });
   } else {
-    alert("No Issue selected!");
+    alert(NO_ISSUE_SELECTED_MESSAGE);
   }
   closePopup();
 };
@@ -79,7 +80,7 @@ export const handleCreateBranchFromIssue = async () => {
       title: issueData.issue.title,
     });
   } else {
-    alert("No Issue selected!");
+    alert(NO_ISSUE_SELECTED_MESSAGE);
   }
   closePopup();
 };

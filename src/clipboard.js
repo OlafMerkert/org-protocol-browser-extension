@@ -1,4 +1,5 @@
 import { getJiraTask } from "./contentCapture";
+import { NO_ISSUE_SELECTED_MESSAGE } from "./messages";
 
 const writeClipboard = (text) => {
   navigator.clipboard.writeText(text);
@@ -17,7 +18,7 @@ export const handleCopyIssueNumbersToClipboard = async () => {
   if (issueData) {
     writeClipboard(formatIssueNumber(issueData));
   } else {
-    alert("No Issue selected!");
+    alert(NO_ISSUE_SELECTED_MESSAGE);
   }
   window.close();
 };
