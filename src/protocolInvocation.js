@@ -74,10 +74,11 @@ export const handleTimesheetEntryForIssue = async () => {
 export const handleCreateBranchFromIssue = async () => {
   const issueData = await getJiraTask();
   if (issueData) {
+    const parentData = issueData.parent ? { parent: issueData.parent.id } : {};
     createBranch({
       issue: issueData.issue.id,
-      parent: issueData.parent.id,
       title: issueData.issue.title,
+      ...parentData,
     });
   } else {
     alert(NO_ISSUE_SELECTED_MESSAGE);
