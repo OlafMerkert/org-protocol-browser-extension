@@ -15,14 +15,16 @@ Install [[https://nodejs.org/en/][Node.js]] and the [[https://yarnpkg.com/lang/e
 + In development mode for Chrome: got to [[chrome://extensions]] and load the extension by selecting the ~target/dist~ folder.
 ** Features
 *** Available org-protocol targets
-| label                | org-protocol handler | parameters                   |
-|----------------------+----------------------+------------------------------|
-| automatic capture    | capture              | title, url, body             |
-| store link           | store-link           | title, url                   |
-| capture              | capture              | title, url, body             |
-| copy selection       | cpsel                | selection                    |
-| send email           | email                | title, url                   |
-| open in eww          | textbrowser          | title, url                   |
+| label             | org-protocol handler | parameters           |
+|-------------------+----------------------+----------------------|
+| automatic capture | capture              | title, url, body     |
+| store link        | store-link           | title, url           |
+| capture           | capture              | title, url, body     |
+| copy selection    | cpsel                | selection            |
+| send email        | email                | title, url           |
+| open in eww       | textbrowser          | title, url           |
+| book issue time   | timesheet            | description          |
+| create branch     | create-branch        | issue, parent, title |
 
 Note that some handlers are custom defined in my emacs configuration and may not be available in every configuration.
 *** Capture template based on page url
