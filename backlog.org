@@ -120,4 +120,7 @@ including story id
 *** DONE read ticket number and description for subtask from its own window
 including story id
 *** DONE send ticket numbers and titles via org protocol
-
+*** CANCELLED support find issues view
+** DONE generate branch names
+*** DONE hand over ticket id and title to emacs via org protocol
+*** DONE generate full branch name and copy to clipboard
