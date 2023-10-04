@@ -1,7 +1,15 @@
 import { assoc, curry, pipe } from "ramda";
 import { getActiveTab, getUrlAndTitleFromTab } from "./activeTabData";
 import { getJiraTask, getSelectionFromTab } from "./contentCapture";
-import { capture, copySelection, openInEmacsBrowser, sendMail, storeLink, timesheet } from "./org";
+import {
+  capture,
+  copySelection,
+  createBranch,
+  openInEmacsBrowser,
+  sendMail,
+  storeLink,
+  timesheet,
+} from "./org";
 
 const closePopup = () => {
   setTimeout(() => window.close(), 100);
@@ -56,6 +64,20 @@ export const handleTimesheetEntryForIssue = async () => {
   const issueData = await getJiraTask();
   if (issueData) {
     timesheet({ description: formatIssueTimesheetDescription(issueData) });
+  } else {
+    alert("No Issue selected!");
+  }
+  closePopup();
+};
+
+export const handleCreateBranchFromIssue = async () => {
+  const issueData = await getJiraTask();
+  if (issueData) {
+    createBranch({
+      issue: issueData.issue.id,
+      parent: issueData.parent.id,
+      title: issueData.issue.title,
+    });
   } else {
     alert("No Issue selected!");
   }

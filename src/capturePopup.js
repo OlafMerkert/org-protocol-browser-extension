@@ -9,6 +9,7 @@ import {
   handleAutomaticCapture,
   handleCapture,
   handleCopySelection,
+  handleCreateBranchFromIssue,
   handleOpenInEmacsBrowser,
   handleSendMail,
   handleStoreLink,
@@ -22,6 +23,7 @@ const App = function () {
       <FrequentAction handler={handleTimesheetEntryForIssue} label="Book Issue Time" />
       <FrequentAction handler={handleAutomaticCapture} label="Automatic Capture" />
       <FrequentAction handler={handleStoreLink} label="Store Link" />
+      <RareAction handler={handleCreateBranchFromIssue} label="Create Branch" />
       <RareAction handler={handleCapture} label="Capture" />
       <RareAction handler={handleCopySelection} label="Copy Selection" />
       <RareAction handler={handleSendMail} label="Send Mail" />
