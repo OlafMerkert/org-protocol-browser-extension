@@ -124,3 +124,5 @@ including story id
 ** DONE generate branch names
 *** DONE hand over ticket id and title to emacs via org protocol
 *** DONE generate full branch name and copy to clipboard
+*** TODO support for different issue types
+bug, story, task
