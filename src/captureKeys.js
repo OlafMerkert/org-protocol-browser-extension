@@ -1,8 +1,4 @@
-import {
-  handleAutomaticCapture,
-  handleStoreLink,
-  handleOpenInEmacsBrowser,
-} from "./protocolInvocation";
+import { handleCapture, handleStoreLink, handleOpenInEmacsBrowser } from "./protocolInvocation";
 
 const COMMANDS = {
   automaticCapture: "automatic-capture",
@@ -13,7 +9,7 @@ const COMMANDS = {
 const keyCommandHandler = (command) => {
   switch (command) {
     case COMMANDS.automaticCapture:
-      return handleAutomaticCapture();
+      return handleCapture();
     case COMMANDS.storeLink:
       return handleStoreLink();
     case COMMANDS.openInEmacsBrowser:

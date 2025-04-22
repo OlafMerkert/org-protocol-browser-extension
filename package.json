@@ -1,6 +1,6 @@
 {
   "name": "org-protocol-browser-extension",
-  "version": "1.11",
+  "version": "1.12",
   "description": "Trigger org-capture from the browser via org-protocol.",
   "license": "Apache-2.0",
   "repository": {
@@ -41,7 +41,7 @@
     "package": "web-ext build -s target/dist -a target",
     "lint": "eslint src/**/*.js",
     "lint:extension": "web-ext lint -s target/dist",
-    "package:signed": "web-ext sign -s target/dist -a target",
+    "package:signed": "web-ext sign -s target/dist -a target --channel unlisted",
     "start": "web-ext run -s target/dist",
     "test": "jest",
     "format": "prettier --write **/*.js **/*.json"

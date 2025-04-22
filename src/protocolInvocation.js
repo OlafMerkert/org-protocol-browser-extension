@@ -9,6 +9,7 @@ import {
   sendMail,
   storeLink,
   timesheet,
+  findGitLogs,
 } from "./org";
 import { NO_ISSUE_SELECTED_MESSAGE } from "./messages";
 
@@ -51,8 +52,6 @@ export const handleCopySelection = async () => {
   closePopup();
 };
 
-export const handleAutomaticCapture = invokeWithUrlAndTitleAndSelection(capture);
-
 function formatIssueTimesheetDescription({ issue, parent }) {
   if (parent) {
     return `${parent.id} ${issue.id} ${issue.title}`;
@@ -80,6 +79,16 @@ export const handleCreateBranchFromIssue = async () => {
       title: issueData.issue.title,
       ...parentData,
     });
+  } else {
+    alert(NO_ISSUE_SELECTED_MESSAGE);
+  }
+  closePopup();
+};
+
+export const handleFindGitLogs = async () => {
+  const issueData = await getJiraTask();
+  if (issueData) {
+    findGitLogs({ issue: issueData.issue.id });
   } else {
     alert(NO_ISSUE_SELECTED_MESSAGE);
   }

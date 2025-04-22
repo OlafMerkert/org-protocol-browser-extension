@@ -1,15 +1,15 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { handleCopyIssueNumbersToClipboard, handleCopyBranchNameToClipboard } from "./clipboard";
+import { handleCopyBranchNameToClipboard, handleCopyIssueNumbersToClipboard } from "./clipboard";
 import { ActionList } from "./components/ActionList";
 import { FrequentAction } from "./components/FrequentAction";
 import { RareAction } from "./components/RareAction";
 import "./popup.css";
 import {
-  handleAutomaticCapture,
   handleCapture,
   handleCopySelection,
   handleCreateBranchFromIssue,
+  handleFindGitLogs,
   handleOpenInEmacsBrowser,
   handleSendMail,
   handleStoreLink,
@@ -21,11 +21,11 @@ const App = function () {
     <ActionList>
       <FrequentAction handler={handleCopyIssueNumbersToClipboard} label="Copy Issue IDs" />
       <FrequentAction handler={handleTimesheetEntryForIssue} label="Book Issue Time" />
-      <FrequentAction handler={handleAutomaticCapture} label="Automatic Capture" />
+      <FrequentAction handler={handleCapture} label="Automatic Capture" />
       <FrequentAction handler={handleStoreLink} label="Store Link" />
       <RareAction handler={handleCreateBranchFromIssue} label="Create Branch" />
       <RareAction handler={handleCopyBranchNameToClipboard} label="Copy Branch Name" />
-      <RareAction handler={handleCapture} label="Capture" />
+      <RareAction handler={handleFindGitLogs} label="Find Issue Commits" />
       <RareAction handler={handleCopySelection} label="Copy Selection" />
       <RareAction handler={handleSendMail} label="Send Mail" />
       <RareAction handler={handleOpenInEmacsBrowser} label="Open in eww" />

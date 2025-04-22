@@ -23,3 +23,4 @@ export const copySelection = openOrgProtocolUrl("cpsel");
 export const sendMail = openOrgProtocolUrl("email");
 export const timesheet = openOrgProtocolUrl("timesheet");
 export const createBranch = openOrgProtocolUrl("create-branch");
+export const findGitLogs = openOrgProtocolUrl("issue-git-logs");
