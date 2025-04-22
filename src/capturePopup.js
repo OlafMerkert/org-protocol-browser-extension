@@ -21,7 +21,7 @@ const App = function () {
     <ActionList>
       <FrequentAction handler={handleCopyIssueNumbersToClipboard} label="Copy Issue IDs" />
       <FrequentAction handler={handleTimesheetEntryForIssue} label="Book Issue Time" />
-      <FrequentAction handler={handleCapture} label="Automatic Capture" />
+      <FrequentAction handler={handleCapture} label="Capture" />
       <FrequentAction handler={handleStoreLink} label="Store Link" />
       <RareAction handler={handleCreateBranchFromIssue} label="Create Branch" />
       <RareAction handler={handleCopyBranchNameToClipboard} label="Copy Branch Name" />
