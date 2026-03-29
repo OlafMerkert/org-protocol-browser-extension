@@ -9,31 +9,16 @@
   },
   "author": "Olaf Merkert <olaf@m-merkert.de>",
   "dependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.2",
-    "@babel/preset-react": "^7.28.5",
-    "babel-jest": "^29.7.0",
-    "babel-loader": "^9.2.1",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.11.0",
-    "html-webpack-plugin": "^5.6.6",
-    "jest": "^29.7.0",
     "prettier": "^3.8.1",
     "ramda": "^0.29.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "style-loader": "^3.3.4",
-    "web-ext": "^8.10.0",
-    "webpack": "^5.105.4",
-    "webpack-cli": "^5.1.4"
+    "web-ext": "^8.10.0"
   },
   "devDependencies": {
     "eslint": "^8.57.1",
-    "eslint-plugin-jest": "^27.9.0",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "jest-environment-jsdom": "^29.7.0"
+    "eslint-plugin-react-hooks": "^4.6.2"
   },
   "scripts": {
     "build": "webpack --mode production",
@@ -46,25 +31,8 @@
     "test": "jest",
     "format": "prettier --write **/*.js **/*.json"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-react",
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "firefox": 61,
-            "chrome": 69
-          }
-        }
-      ]
-    ]
-  },
   "prettier": {
     "printWidth": 100,
     "trailingComma": "es5"
-  },
-  "jest": {
-    "testEnvironment": "jsdom"
   }
 }
