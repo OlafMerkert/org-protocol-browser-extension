@@ -11,3 +11,8 @@ export const getActiveTab = async () => {
 };
 
 export const getUrlAndTitleFromTab = pick(["url", "title"]);
+
+export const getSelectionFromTab = async (tab) => {
+  const { selection } = await chrome.tabs.sendMessage(tab.id, { kind: "grab-selection" });
+  return selection;
+};

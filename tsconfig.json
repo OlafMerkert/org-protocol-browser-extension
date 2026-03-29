@@ -2,9 +2,10 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./target/dist",
-    "module": "nodenext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "target": "esnext",
-    "types": [],
+    "types": ["bun", "chrome", "ramda", "react", "react-dom"],
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,

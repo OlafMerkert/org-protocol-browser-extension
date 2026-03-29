@@ -13,8 +13,3 @@ export const getJiraTask = async () => {
   const tab = await getActiveTab();
   return await getJiraTaskFromTab(tab);
 };
-
-export const getSelectionFromTab = async (tab) => {
-  const { selection } = await chrome.tabs.sendMessage(tab.id, { kind: "grab-selection" });
-  return selection;
-};

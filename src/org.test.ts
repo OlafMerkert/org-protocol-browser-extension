@@ -1,14 +1,15 @@
+import { expect, test, describe } from "bun:test";
 import { orgProtocolUrlBuilder } from "./org";
 
 describe("For invoking org-protocol urls", () => {
-  it("builds the correct URL", () => {
+  test("builds the correct URL", () => {
     const actual = orgProtocolUrlBuilder("capture")({
       url: "http://www.sl2z.de",
     });
     expect(actual).toBe("org-protocol://capture?url=http%3A%2F%2Fwww.sl2z.de");
   });
 
-  it("can add multiple parameters", () => {
+  test("can add multiple parameters", () => {
     const actual = orgProtocolUrlBuilder("store-link")({
       title: "Hello",
       body: "Indeed",
@@ -16,7 +17,7 @@ describe("For invoking org-protocol urls", () => {
     expect(actual).toBe("org-protocol://store-link?title=Hello&body=Indeed");
   });
 
-  it("encodes space with a percent symbol", () => {
+  test("encodes space with a percent symbol", () => {
     const actual = orgProtocolUrlBuilder("store-link")({
       title: "Hello World",
     });
