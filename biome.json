@@ -92,6 +92,7 @@
     }
   },
   "javascript": {
+    "globals": ["chrome"],
     "formatter": {
       "jsxQuoteStyle": "double",
       "quoteProperties": "asNeeded",

@@ -1,5 +1,5 @@
 import { assoc, curry, pipe } from "ramda";
-import { getActiveTab, getUrlAndTitleFromTab, getSelectionFromTab } from "./activeTabData";
+import { getActiveTab, getSelectionFromTab, getUrlAndTitleFromTab } from "./activeTabData";
 import { getJiraTask } from "./contentCapture";
 import { NO_ISSUE_SELECTED_MESSAGE } from "./messages";
 import {
