@@ -9,30 +9,23 @@
   },
   "author": "Olaf Merkert <olaf@m-merkert.de>",
   "dependencies": {
-    "prettier": "^3.8.1",
     "ramda": "^0.32.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "web-ext": "^10.0.0"
   },
   "devDependencies": {
-    "eslint": "^10.1.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.0.1"
+    "@biomejs/biome": "2.4.8"
   },
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development --watch",
     "package": "web-ext build -s target/dist -a target",
-    "lint": "eslint src/**/*.js",
+    "lint": "bunx --bun @biomejs/biome check",
     "lint:extension": "web-ext lint -s target/dist",
     "package:signed": "web-ext sign -s target/dist -a target --channel unlisted",
     "start": "web-ext run -s target/dist",
     "test": "jest",
-    "format": "prettier --write **/*.js **/*.json"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "trailingComma": "es5"
+    "format": "bunx --bun @biomejs/biome format --write"
   }
 }
