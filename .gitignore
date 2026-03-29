@@ -2,3 +2,5 @@ dist
 node_modules
 target
 CREDENTIALS.sh
+/.clj-kondo/
+/.lsp/
