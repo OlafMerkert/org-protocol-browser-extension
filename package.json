@@ -15,9 +15,15 @@
     "web-ext": "^10.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.8"
+    "@biomejs/biome": "2.4.8",
+    "@types/chrome": "^0.1.38",
+    "@types/ramda": "^0.31.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.2"
   },
   "scripts": {
+    "typecheck": "tsc",
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development --watch",
     "package": "web-ext build -s target/dist -a target",
