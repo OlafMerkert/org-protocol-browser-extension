@@ -1,17 +1,17 @@
 import { assoc, curry, pipe } from "ramda";
 import { getActiveTab, getUrlAndTitleFromTab } from "./activeTabData";
 import { getJiraTask, getSelectionFromTab } from "./contentCapture";
+import { NO_ISSUE_SELECTED_MESSAGE } from "./messages";
 import {
   capture,
   copySelection,
   createBranch,
+  findGitLogs,
   openInEmacsBrowser,
   sendMail,
   storeLink,
   timesheet,
-  findGitLogs,
 } from "./org";
-import { NO_ISSUE_SELECTED_MESSAGE } from "./messages";
 
 const closePopup = () => {
   setTimeout(() => window.close(), 100);
@@ -38,7 +38,7 @@ const captureWithTemplate = curry(pipe(assoc("template"), capture));
 
 export const handleCaptureWithTemplate = pipe(
   captureWithTemplate,
-  invokeWithUrlAndTitleAndSelection
+  invokeWithUrlAndTitleAndSelection,
 );
 
 export const handleStoreLink = invokeWithUrlAndTitle(storeLink);

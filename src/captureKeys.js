@@ -1,4 +1,4 @@
-import { handleCapture, handleStoreLink, handleOpenInEmacsBrowser } from "./protocolInvocation";
+import { handleCapture, handleOpenInEmacsBrowser, handleStoreLink } from "./protocolInvocation";
 
 const COMMANDS = {
   automaticCapture: "automatic-capture",

@@ -1,13 +1,14 @@
 import { getActiveTab, getSelectionFromTab, getUrlAndTitleFromTab } from "./activeTabData";
 import {
-  handleStoreLink,
-  handleSendMail,
-  handleOpenInEmacsBrowser,
-  handleCopySelection,
+  handleAutomaticCapture,
   handleCapture,
   handleCaptureWithTemplate,
-  handleAutomaticCapture,
+  handleCopySelection,
+  handleOpenInEmacsBrowser,
+  handleSendMail,
+  handleStoreLink,
 } from "./protocolInvocation";
+
 jest.mock("./activeTabData");
 
 describe("The protocol handlers", () => {
