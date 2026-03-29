@@ -10,15 +10,15 @@
   "author": "Olaf Merkert <olaf@m-merkert.de>",
   "dependencies": {
     "prettier": "^3.8.1",
-    "ramda": "^0.29.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "web-ext": "^8.10.0"
+    "ramda": "^0.32.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "web-ext": "^10.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
+    "eslint": "^10.1.0",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^4.6.2"
+    "eslint-plugin-react-hooks": "^7.0.1"
   },
   "scripts": {
     "build": "webpack --mode production",
