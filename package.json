@@ -25,15 +25,16 @@
     "typescript": "^6.0.2"
   },
   "scripts": {
-    "typecheck": "tsc",
-    "build": "webpack --mode production",
-    "build:dev": "webpack --mode development --watch",
-    "package": "web-ext build -s target/dist -a target",
-    "lint": "bunx --bun @biomejs/biome check",
+    "build": "NODE_ENV=production bun run scripts/bun.build.ts",
+    "build:chrome": "BROWSER=chrome bun run build",
+    "build:firefox": "BROWSER=firefox bun run build",
+    "format": "biome format --write",
+    "lint": "biome check",
     "lint:extension": "web-ext lint -s target/dist",
-    "package:signed": "web-ext sign -s target/dist -a target --channel unlisted",
-    "start": "web-ext run -s target/dist",
-    "test": "jest",
-    "format": "bunx --bun @biomejs/biome format --write"
+    "package:chrome": "cd dist && zip -r ../target/chrome/extension.zip .",
+    "package:firefox": "web-ext build -s target/dist -a target",
+    "package:firefox:signed": "web-ext sign -s target/dist -a target --channel unlisted",
+    "start:firefox": "web-ext run -s target/dist",
+    "typecheck": "tsc"
   }
 }
