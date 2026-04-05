@@ -10,10 +10,12 @@ interface Manifest {
     default_title: string;
     default_icon: Record<string, string>;
   };
-  background: {
-    scripts: string[];
-    type: string;
-  };
+  background:
+    | {
+        service_worker: string;
+        type: string;
+      }
+    | { scripts: string[]; type: string };
   content_scripts: Array<{
     matches: string[];
     js: string[];
@@ -65,6 +67,17 @@ export async function generateManifest(
   const jiraScript = findScript("jiraTasks");
   const textSelectionScript = findScript("textSelection");
 
+  const background =
+    browser === "chrome"
+      ? {
+          service_worker: backgroundScript,
+          type: "module",
+        }
+      : {
+          scripts: [backgroundScript],
+          type: "module",
+        };
+
   const manifest: Manifest = {
     manifest_version: 3,
     name: "Org Protocol Browser Extension",
@@ -80,10 +93,7 @@ export async function generateManifest(
       default_title: "Org Protocol",
       default_popup: "capturePopup.html",
     },
-    background: {
-      scripts: [backgroundScript],
-      type: "module",
-    },
+    background,
     content_scripts: [
       {
         matches: ["https://*/*"],
