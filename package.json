@@ -1,6 +1,6 @@
 {
   "name": "org-protocol-browser-extension",
-  "version": "1.12",
+  "version": "1.13",
   "description": "Trigger org-capture from the browser via org-protocol.",
   "license": "Apache-2.0",
   "repository": {
@@ -27,7 +27,7 @@
     "format": "biome format --write",
     "lint": "biome check",
     "lint:extension": "web-ext lint -s target/dist",
-    "package:chrome": "cd dist && zip -r ../target/chrome/extension.zip .",
+    "package:chrome": "cd target/dist && zip -r ../chrome-extension.zip .",
     "package:firefox": "web-ext build -s target/dist -a target",
     "package:firefox:signed": "web-ext sign -s target/dist -a target --channel unlisted",
     "start:firefox": "web-ext run -s target/dist",

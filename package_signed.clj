@@ -13,6 +13,7 @@
      :api-key  (some (partial get-property "API_KEY") secret-lines)}))
 
 (defn build-signed-package [{:keys [api-key api-secret]}]
-  (shell "npm" "run" "package:signed" "--" "--api-key" api-key "--api-secret" api-secret))
+  ;; TODO this prints out the command, including the secret
+  (shell "bun" "run" "package:firefox:signed" "--" "--api-key" api-key "--api-secret" api-secret))
 
 (build-signed-package (read-api-credentials))
