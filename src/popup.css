@@ -1,5 +1,7 @@
 html,
 body {
+  min-width: 25em;
+  min-height: 15em;
   max-width: 40em;
   max-height: 20em;
 }
@@ -9,8 +11,25 @@ body {
   overflow: hidden;
 }
 
-body > div,
-body > div > div {
-  /* width: 100%; */
-  /* height: 100%; */
+.actionList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-auto-flow: row;
+  grid-gap: 0.2rem;
+}
+
+.frequentAction {
+  width: 12rem;
+  height: 4.2rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16pt;
+  grid-row: span 2;
+}
+
+.rareAction {
+  width: 12rem;
+  height: 2rem;
+  text-align: center;
 }

@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=300">
-  <title>Org Protocol Capture</title>
-  <link rel="stylesheet" href="./popup.css">
-</head>
-<body>
-  <div id="root"></div>
-  <script type="module" src="./capturePopup.tsx"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=300">
+    <title>Org Protocol Capture</title>
+    <link rel="stylesheet" href="./popup.css">
+  </head>
+  <body>
+    <div class="actionList">
+      <button type="button" class="frequentAction" data-handler="handleCopyIssueNumbersToClipboard">Copy Issue IDs</button>
+      <button type="button" class="frequentAction" data-handler="handleTimesheetEntryForIssue">Book Issue Time</button>
+      <button type="button" class="frequentAction" data-handler="handleCapture">Capture</button>
+      <button type="button" class="frequentAction" data-handler="handleStoreLink">Store Link</button>
+      <button type="button" class="rareAction" data-handler="handleCreateBranchFromIssue">Create Branch</button>
+      <button type="button" class="rareAction" data-handler="handleCopyBranchNameToClipboard">Copy Branch Name</button>
+      <button type="button" class="rareAction" data-handler="handleFindGitLogs">Find Issue Commits</button>
+      <button type="button" class="rareAction" data-handler="handleCopySelection">Copy Selection</button>
+      <button type="button" class="rareAction" data-handler="handleSendMail">Send Mail</button>
+      <button type="button" class="rareAction" data-handler="handleOpenInEmacsBrowser">Open in eww</button>
+    </div>
+    <script type="module" src="./capturePopup.ts"></script>
+  </body>
 </html>
