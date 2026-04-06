@@ -8,16 +8,16 @@
   </head>
   <body>
     <div class="actionList">
-      <button type="button" class="frequentAction" data-handler="handleCopyIssueNumbersToClipboard">Copy Issue IDs</button>
-      <button type="button" class="frequentAction" data-handler="handleTimesheetEntryForIssue">Book Issue Time</button>
-      <button type="button" class="frequentAction" data-handler="handleCapture">Capture</button>
-      <button type="button" class="frequentAction" data-handler="handleStoreLink">Store Link</button>
-      <button type="button" class="rareAction" data-handler="handleCreateBranchFromIssue">Create Branch</button>
-      <button type="button" class="rareAction" data-handler="handleCopyBranchNameToClipboard">Copy Branch Name</button>
-      <button type="button" class="rareAction" data-handler="handleFindGitLogs">Find Issue Commits</button>
-      <button type="button" class="rareAction" data-handler="handleCopySelection">Copy Selection</button>
-      <button type="button" class="rareAction" data-handler="handleSendMail">Send Mail</button>
-      <button type="button" class="rareAction" data-handler="handleOpenInEmacsBrowser">Open in eww</button>
+      <button type="button" class="bigAction blueAction" data-handler="handleCopyIssueNumbersToClipboard">Copy Issue IDs</button>
+      <button type="button" class="bigAction greenAction" data-handler="handleTimesheetEntryForIssue">Book Issue Time</button>
+      <button type="button" class="bigAction redAction" data-handler="handleCapture">Capture</button>
+      <button type="button" class="bigAction emacsAction" data-handler="handleStoreLink">Store Link</button>
+      <button type="button" class="smallAction" data-handler="handleCreateBranchFromIssue">Create Branch</button>
+      <button type="button" class="smallAction blueAction" data-handler="handleCopyBranchNameToClipboard">Copy Branch Name</button>
+      <button type="button" class="smallAction orangeAction" data-handler="handleFindGitLogs">Find Issue Commits</button>
+      <button type="button" class="smallAction" data-handler="handleCopySelection">Copy Selection</button>
+      <button type="button" class="smallAction" data-handler="handleSendMail">Send Mail</button>
+      <button type="button" class="smallAction emacsAction" data-handler="handleOpenInEmacsBrowser">Open in eww</button>
     </div>
     <script type="module" src="./capturePopup.ts"></script>
   </body>

@@ -1,7 +1,7 @@
 html,
 body {
   min-width: 25em;
-  min-height: 15em;
+  min-height: 16em;
   max-width: 40em;
   max-height: 20em;
 }
@@ -19,17 +19,46 @@ body {
   grid-gap: 0.2rem;
 }
 
-.frequentAction {
+.bigAction,
+.smallAction {
+  background-color: #cdcdcd;
+  text-align: center;
+  border-color: #424242;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.3rem;
+  box-shadow: 1px 1px 3px rgb(0 0 0 / 25%);
+}
+
+.bigAction {
   width: 12rem;
   height: 4.2rem;
-  text-align: center;
   font-weight: bold;
   font-size: 16pt;
   grid-row: span 2;
 }
 
-.rareAction {
+.smallAction {
   width: 12rem;
   height: 2rem;
-  text-align: center;
+}
+
+.greenAction {
+  background-color: #c3f1c1;
+}
+
+.blueAction {
+  background-color: #99c7e3;
+}
+
+.redAction {
+  background-color: #eb8a7b;
+}
+
+.orangeAction {
+  background-color: #f4dc87;
+}
+
+.emacsAction {
+  background-color: #b69bc1;
 }
