@@ -91,6 +91,14 @@
       }
     }
   },
+  "overrides": [
+    {
+      "includes": ["scripts/**"],
+      "javascript": {
+        "globals": ["Bun"]
+      }
+    }
+  ],
   "javascript": {
     "globals": ["chrome"],
     "formatter": {

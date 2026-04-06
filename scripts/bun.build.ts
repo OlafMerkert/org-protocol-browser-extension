@@ -10,11 +10,10 @@ const { version } = await Bun.file("./package.json").json();
 
 // Clean dist directory
 await Bun.write("./target/dist/.gitkeep", "");
-const distDir = Bun.file("./target/dist");
 
 try {
   await $`rm -rf ./target/dist/*`;
-} catch (e) {
+} catch (_e) {
   console.log("target/dist already empty");
 }
 
