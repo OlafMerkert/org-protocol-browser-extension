@@ -1,4 +1,4 @@
-import { build, $ } from "bun";
+import { $, build } from "bun";
 import { generateManifest } from "./generate-manifest";
 
 const isDev = process.env.NODE_ENV !== "production";

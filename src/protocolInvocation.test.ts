@@ -88,6 +88,6 @@ describe("The protocol handlers", () => {
     await handleCapture();
     expect(tabUpdateMock).toHaveBeenCalledWith(18, {
       url: "org-protocol://capture?title=exampleTitle&url=https%3A%2F%2Fjira.somewhere.com%2Fbrowse%2FTM-3479&body=exampleSelection",
-    });
+    } as const);
   });
 });

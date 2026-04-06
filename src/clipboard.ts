@@ -1,11 +1,12 @@
 import { getJiraTask } from "./contentCapture";
 import { NO_ISSUE_SELECTED_MESSAGE } from "./messages";
+import type { IssueData } from "./types";
 
-const writeClipboard = (text) => {
+const writeClipboard = (text: string) => {
   navigator.clipboard.writeText(text);
 };
 
-function formatIssueNumber({ issue, parent }) {
+function formatIssueNumber({ issue, parent }: IssueData) {
   if (parent) {
     return `${parent.id} ${issue.id}`;
   } else {
@@ -23,7 +24,7 @@ export const handleCopyIssueNumbersToClipboard = async () => {
   window.close();
 };
 
-function sanitiseBranchTitle(title) {
+function sanitiseBranchTitle(title: string) {
   return title
     .toLowerCase()
     .replaceAll(" ", "-")
@@ -32,8 +33,8 @@ function sanitiseBranchTitle(title) {
     .replaceAll("_", "-");
 }
 
-function formatIssueToBranchName({ issue, parent }) {
-  const branchTitle = sanitiseBranchTitle(issue.title);
+function formatIssueToBranchName({ issue, parent }: IssueData) {
+  const branchTitle = sanitiseBranchTitle(issue.title ?? "");
   if (parent) {
     return `${parent.id}-${issue.id}-${branchTitle}`;
   } else {

@@ -1,5 +1,6 @@
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
   if (request.kind === "grab-selection") {
-    sendResponse({ selection: getSelection().toString() });
+    const selection = getSelection();
+    sendResponse({ selection: selection?.toString() ?? "" });
   }
 });
