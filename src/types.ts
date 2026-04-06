@@ -1,6 +1,6 @@
 export interface Issue {
   id: string;
-  title?: string;
+  title?: string | undefined;
 }
 
 export interface IssueData {

@@ -1,4 +1,4 @@
-import type { IssueData } from "./types";
+import type { Issue, IssueData } from "./types";
 
 chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
   if (request.kind === "grab-jira-task") {
@@ -32,13 +32,15 @@ function getSelectedSwimlane(): Element | null {
   return document.querySelector(".ghx-swimlane-header.ghx-selected");
 }
 
-function getCardData(card: Element): { id: string; title: string } | null {
+function getCardData(card: Element): Issue | null {
   const keyEl = card.querySelector(".ghx-key");
   const summaryEl = card.querySelector(".ghx-summary");
-  if (!keyEl || !summaryEl) return null;
+  if (!keyEl) return null;
+  const id = keyEl.textContent;
+  if (!id) return null;
   return {
-    id: keyEl.textContent ?? "",
-    title: summaryEl.textContent ?? "",
+    id,
+    title: summaryEl?.textContent,
   };
 }
 
@@ -50,17 +52,17 @@ function stripFlagged(text: string) {
   }
 }
 
-function getSwimlaneData(lane: Element): { id: string; title: string } | null {
+function getSwimlaneData(lane: Element): Issue | null {
   const keyElement = lane.querySelector(".ghx-parent-key");
   const summaryElement = lane.querySelector(".ghx-summary");
-  if (keyElement && summaryElement) {
-    return {
-      id: keyElement.textContent ?? "",
-      title: stripFlagged(summaryElement.textContent ?? ""),
-    };
-  } else {
-    return null;
-  }
+  if (!keyElement) return null;
+  const id = keyElement.textContent;
+  if (!id) return null;
+  const title = summaryElement?.textContent ? stripFlagged(summaryElement.textContent) : undefined;
+  return {
+    id,
+    title,
+  };
 }
 
 function getTicketDataFromBoard(): IssueData | null | undefined {
@@ -89,15 +91,15 @@ function getTicketDataFromBoard(): IssueData | null | undefined {
   }
 }
 
-function getIssueFromDetailPage(): { id: string; title: string } | null {
+function getIssueFromDetailPage(): Issue | null {
   const keyVal = document.querySelector("#key-val");
   const summaryVal = document.querySelector("#summary-val");
-  if (!keyVal || !summaryVal) return null;
+  if (!keyVal) return null;
   const issueKey = keyVal.getAttribute("data-issue-key");
   if (!issueKey) return null;
   return {
     id: issueKey,
-    title: summaryVal.textContent ?? "",
+    title: summaryVal?.textContent,
   };
 }
 
